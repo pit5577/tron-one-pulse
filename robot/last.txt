@@ -7,9 +7,9 @@ OK  chromium/trx 1 открыть страницу: холодный старт 
 RED chromium/trx 2 вход: «Получить код»: сервер ответил 429 {"ok":false,"reason":"rate_limited","detail":"на этот email уже ушло 3 письма за час - проверь «Спам» или попробуй позже","params":{"retryAfterSec":3300}}
 OK  chromium/usdt 1 открыть страницу: холодный старт 68 мс; сборка на странице 20261113122613; ожидали 20261113122613; service worker: ready; после перезагрузки сборка 20261113122613
 OK  chromium/usdt 2 вход: вход по robot+20261116-usdt@tronone.io за 2787 мс
-OK  chromium/usdt 3 пополнение: адрес пополнения THMyoKS19PjfoAkrY3QKEU1d7Vu2bDos2t; перевод 5 TRX 9739b7bd3910b243aa68faa3749016b94260286b74473c2035cb7c8c6dd2ce83 SUCCESS; баланс до 9.53, после 14.53; зачислено за 105 с
+OK  chromium/usdt 3 пополнение: адрес пополнения T…os2t; перевод 5 TRX 9739b7bd3910b243aa68faa3749016b94260286b74473c2035cb7c8c6dd2ce83 SUCCESS; баланс до 9.53, после 14.53; зачислено за 105 с
 OK  chromium/usdt 4 баланс: на экранах {"кнопка":14.53,"окно пополнения":14.53}; ожидали 14.53
-OK  chromium/usdt 5 зарядка: цена «Зарядить за 0,88 TRX»; ответ сервера 200 {"ok":true,"id":"3ba159cb-191f-4fd1-9bca-710402368f5e","view":{"misdirect":null,"id":"3ba159cb-191f-4fd1-9bca-710402368f5e","sender":"TWMbtts2qPg5hzRzsgdUQAUWFF2EuKpTsc","recipient":"TFgfBs4CWHCKVYzkF; на цепочке до: энергия 0, полоса стейк 0; после: энергия 17755, полоса стейк 354
+OK  chromium/usdt 5 зарядка: цена «Зарядить за 0,88 TRX»; ответ сервера 200 {"ok":true,"id":"3ba159cb-191f-4fd1-9bca-710402368f5e","view":{"misdirect":null,"id":"3ba159cb-191f-4fd1-9bca-710402368f5e","sender":"T…pTsc","recipient":"TFgfBs4CWHCKVYzkF; на цепочке до: энергия 0, полоса стейк 0; после: энергия 17755, полоса стейк 354
 RED chromium/usdt 6 отправка: перевод 1 USDT 756cfdbbe7585750fc21b8a1c4c2d0a67e3245e90e3bc1ea2bb8c5c276055ba2 SUCCESS, сожжено 0 TRX; выписка пустая: История Пока пусто - первая зарядка появится здесь. Закрыть
 OK  webkit/trx 1 открыть страницу: холодный старт 177 мс; сборка на странице 20261113122613; ожидали 20261113122613; service worker: ready; после перезагрузки сборка 20261113122613
 RED webkit/trx 2 вход: «Получить код»: сервер ответил 429 {"ok":false,"reason":"rate_limited","detail":"на этот email уже ушло 3 письма за час - проверь «Спам» или попробуй позже","params":{"retryAfterSec":3044}}
