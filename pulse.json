@@ -1,5 +1,5 @@
 {
- "t": "2026-11-16T23:07+0300",
+ "t": "2026-11-16T23:11+0300",
  "версия": 1,
  "тихие_часы": [
   0,
@@ -14,16 +14,25 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt4kKSJHNJ4jwczcFKzxx4mh"
   },
   {
-   "ид": "ЗУ-1",
-   "последняя": "2026-11-16T23:00+0300",
-   "тревога_после": "2026-11-16T23:40+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtKJKnUAqEDDxrHkPoR5S559"
-  },
-  {
    "ид": "УТ-1",
    "последняя": "2026-11-16T23:07+0300",
    "тревога_после": "2026-11-17T00:47+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtJnFy7mhhpCxD91JjLt5GCW"
+  },
+  {
+   "ид": "ЗУ-1",
+   "последняя": "2026-11-16T23:08+0300",
+   "тревога_после": "2026-11-16T23:48+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtKJKnUAqEDDxrHkPoR5S559"
   }
+ ],
+ "до_запуска_дней": 24,
+ "запущено": false,
+ "вчера_сделано": [
+  "Операционная система собрана и проверена запуском",
+  "Очередь решений разобрана: открытых не больше 10, сирот нет",
+  "Очереди тем ужаты до 6 КБ",
+  "Сторож ворот на Маке и починка входа в бою",
+  "Сторож боя: проба входа, «клиент застрял», ключ почты, внешний пульс"
  ]
 }
