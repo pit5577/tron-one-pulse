@@ -1,0 +1,13 @@
+--- deploy_one.sh	2026-11-13 06:18:35.030662000 +0000
++++ deploy_one.sh	2026-11-16 18:18:11.865885093 +0000
+@@ -72,6 +72,10 @@
+   else
+     fail "G5 в deploy_upcloud.sh нет режима CHECK_ONLY - ворота не проверены его кодом"
+   fi
++  # G6 (УТ-1, замок КП-1 Ивана 16.11): перевод TRX и USDT через наш узел песочницы проходит и не жжет TRX. Итог - по
++  # отпечатку кода (сервер метки + узел песочницы): тот же код - без сети; новый код - один прогон на Nile. Обхода нет.
++  # Ревью Fable В6: подмена песочницы только в тесте - из окружения ворот ее убираем
++  env -u SANDBOX_RUN /bin/bash "$(dirname "$0")/transfer_gate.sh" "$L" || fail "G6 перевод TRX/USDT через узел песочницы не зеленый ($DEV/build/transfer_gate)"
+   STATUS=GREEN; [ -z "$FAILS" ] || STATUS=RED
+   mkdir -p "$OUT/$L"
+   { echo "status=$STATUS"; echo "label=$L"; echo "at=$(date -u +%Y-%m-%dT%H:%M:%SZ)"; echo "prod_now=$PROD_NOW"

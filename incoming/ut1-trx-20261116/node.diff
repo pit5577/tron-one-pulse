@@ -1,0 +1,440 @@
+diff --git a/src/main.ts b/src/main.ts
+index fcf584a..124528e 100644
+--- a/src/main.ts
++++ b/src/main.ts
+@@ -34,6 +34,10 @@
+ //                                    GetAccountResource показывает энергию +131000 и полосу +450 сверх использованного - иначе TronLink без TRX
+ //                                    не дает подписать. Перевод по-прежнему уходит только после настоящих ресурсов. Баланс TRX не трогаем.
+ //   NODE_VIRTUAL_RESOURCES_SWITCH=/path  файл-выключатель: «off» - выкл без перезапуска
++//   NODE_TRX=on                      УТ-1 (Иван 16.11): перевод TRX с адреса с обещанными ресурсами идет через узел: полоса из Банка
++//                                    (/charge {legs:"bandwidth", transfer:"trx"}, нужен NODE_ENERGY_TOKEN), 0,32 сервер спишет после
++//                                    перевода в сети. Только после сервера с transfer:"trx". Выкл (по умолчанию) - прежний отказ only_usdt.
++//   NODE_TRX_SWITCH=/path            файл-выключатель: «off» - выкл без перезапуска
+ //   NODE_ACCEPT_AFTER_MS=2000        через сколько кошельку «принято», если решение еще не готово (галочка через 1-3 с)
+ //   NODE_MAX_PENDING_ACCEPTED=200    сколько принятых переводов держим одновременно; больше - ответ по факту
+ import { createServer } from "node:http";
+@@ -87,14 +91,17 @@ const upstream: Upstream = async (method, path, body) => {
+ const keyHeader = (k: string): Record<string, string> => (k.startsWith("nk_") ? { "x-node-key": k } : { "x-account-key": k });
+ /** КК Э-1 (11.11): знак «запрос от узла Tron One» - отдельный токен NODE_ENERGY_TOKEN (не NODE_TOKEN: тот дает возвраты), у клиента его нет. */
+ const nodeProof = (): Record<string, string> => (env.NODE_ENERGY_TOKEN ? { "x-node-energy-token": env.NODE_ENERGY_TOKEN } : {});
++if (env.NODE_TRX === "on" && (env.NODE_ENERGY_TOKEN ?? "").length < 24) throw new Error("NODE_TRX=on: нужен NODE_ENERGY_TOKEN >= 24 знаков (перевод TRX заказывает только узел)");
++// Ревью Fable В1: без NODE_TOKEN нет charge-not-used - отказ сети по переводу TRX не снял бы удержание сразу
++if (env.NODE_TRX === "on" && !env.NODE_TOKEN) throw new Error("NODE_TRX=on: нужен NODE_TOKEN (снятие удержания, если перевод TRX не ушел)");
+ if (env.NODE_ENERGY_BILL === "on" && (env.NODE_ENERGY_TOKEN ?? "").length < 24) throw new Error("NODE_ENERGY_BILL=on: нужен NODE_ENERGY_TOKEN >= 24 знаков (КК Э-1: энергия только от узла)");
+ const tronone: TronOne = {
+   // Ждем полный ответ (пульт держит до 25 с), даже если узел уже отказал кошельку: id нужен для возврата.
+   async charge(accountKey, sender, recipient, _timeoutMs, opts) {
+     const r = await fetch(api + "/charge", {
+       // КК Э-1: энергию узла сервер принимает только от узла - к ключу клиента добавляем сервисный токен узла.
+-      method: "POST", headers: { "content-type": "application/json", ...keyHeader(accountKey), ...(opts?.energy ? nodeProof() : {}) },
+-      body: JSON.stringify({ sender, recipient, ...(opts?.legs ? { legs: opts.legs } : {}), ...(opts?.energy ? { energy: opts.energy, energyNeed: opts.energyNeed } : {}) }), signal: AbortSignal.timeout(40_000),
++      method: "POST", headers: { "content-type": "application/json", ...keyHeader(accountKey), ...(opts?.energy || opts?.transfer ? nodeProof() : {}) },
++      body: JSON.stringify({ sender, recipient, ...(opts?.legs ? { legs: opts.legs } : {}), ...(opts?.energy ? { energy: opts.energy, energyNeed: opts.energyNeed } : {}), ...(opts?.transfer ? { transfer: opts.transfer } : {}) }), signal: AbortSignal.timeout(40_000),
+     });
+     // Эксплуатация 11.11: каждый ответ /charge - одна строка журнала (статус, ok, reason/error), без ключа и адресов.
+     const text = await r.text();
+@@ -221,6 +228,7 @@ const handle = createNode({
+   // Выключатель без перезапуска: файл NODE_ACCEPT_EARLY_SWITCH (on/off), читается на каждом переводе. Нет файла - по env.
+   acceptEarly: () => { const sw = env.NODE_ACCEPT_EARLY_SWITCH; if ((env.NODE_ACCEPT_EARLY ?? "on") === "off") return false; if (!sw) return true; try { return !existsSync(sw) || readFileSync(sw, "utf8").trim() !== "off"; } catch { return true; } }, acceptAfterMs: Number(env.NODE_ACCEPT_AFTER_MS ?? 2_000), maxPendingAccepted: Number(env.NODE_MAX_PENDING_ACCEPTED ?? 200),
+   // «Ресурсы до подписи»: NODE_VIRTUAL_RESOURCES=on и файл-выключатель NODE_VIRTUAL_RESOURCES_SWITCH («off» - выкл без перезапуска).
++  trxTransfer: () => { if (env.NODE_TRX !== "on") return false; const sw = env.NODE_TRX_SWITCH; if (!sw) return true; try { return !existsSync(sw) || readFileSync(sw, "utf8").trim() !== "off"; } catch { return false; } },
+   virtualResources: () => { if (env.NODE_VIRTUAL_RESOURCES !== "on") return false; const sw = env.NODE_VIRTUAL_RESOURCES_SWITCH; if (!sw) return true; try { return !existsSync(sw) || readFileSync(sw, "utf8").trim() !== "off"; } catch { return false; } },
+   bwLeg: env.NODE_BW_LEG === "on", catfeeNoFallback: env.CATFEE_NO_FALLBACK === "on", energyBill: env.NODE_ENERGY_BILL === "on",
+   journal: (rec) => { try { appendFileSync(journalFile, JSON.stringify(rec) + "\n"); } catch (e) { console.log(`ALARM node journal ${String(e)}`); } },
+diff --git a/src/node.ts b/src/node.ts
+index 5c50e0b..d021815 100644
+--- a/src/node.ts
++++ b/src/node.ts
+@@ -7,7 +7,7 @@ import type { IncomingMessage, ServerResponse } from "node:http";
+ import { createHash } from "node:crypto";
+ import { GRPC, RETURN_CODES, encodeReturn, slugOf, type GrpcReply, type GrpcUpstream } from "./grpc.ts";
+ import { patchAccountResource, patchAccountResourceJson, bytesField } from "./vres.ts";
+-import { base58check, decodeRaw, signerOf, trc20TransferOf, encodeTransactionHex, hexToBytes, bytesToHex, isTronAddress, TRIGGER_SMART_CONTRACT, type RawTx, type Trc20Transfer } from "./tx.ts";
++import { base58check, decodeRaw, signerOf, trc20TransferOf, trxTransferOf, encodeTransactionHex, hexToBytes, bytesToHex, isTronAddress, TRIGGER_SMART_CONTRACT, type RawTx, type Trc20Transfer } from "./tx.ts";
+ 
+ export const USDT: Record<string, string> = {
+   mainnet: "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
+@@ -39,12 +39,16 @@ export type Upstream = (method: string, path: string, body: string | undefined)
+ /** Ответы API Tron One в том виде, как их отдает http.ts (clientCharge / clientView). */
+ export interface ChargeReply { ok: boolean; reason?: string; hint?: string; detail?: string; id?: string; nothingToCharge?: boolean; view?: ChargeViewLite;
+   /** Сервер повторяет legs, если понял зарядку «только bandwidth» (модель Ивана 11.11). */
+-  legs?: string }
++  legs?: string;
++  /** УТ-1: сервер повторяет transfer, если понял зарядку под перевод TRX. */
++  transfer?: string }
+ export interface ChargeViewLite { id: string; status: string; ready: boolean; refused?: string | null; outcome?: string | null;
+   /** Версия 0.5 (Клиент 11.11): что сервер реально везет - "bandwidth" (нога) или "none" (ног нет, можно отправлять сразу). */
+   only?: string }
+ /** Заказ зарядки: legs - только полоса или ничего; energy:"catfee" - сервер держит цену энергии по волне (энергию везет CatFee). */
+-export interface ChargeOpts { legs?: "bandwidth" | "none"; energy?: "catfee"; energyNeed?: number }
++export interface ChargeOpts { legs?: "bandwidth" | "none"; energy?: "catfee"; energyNeed?: number;
++  /** УТ-1 (Иван 16.11): нога bandwidth под перевод TRX - сервер ищет перевод TRX и не читает USDT. Только с legs "bandwidth". */
++  transfer?: "trx" }
+ /** Факт покупки энергии узлом (catfee-used). ok - 200; retry - 503 или сеть; stop - 400/404/409 (не повторять). */
+ export interface EnergyFact { chargeId: string; txid: string; energyUsed: number; burntSun: number; at: number }
+ export interface TronOne {
+@@ -128,6 +132,10 @@ export interface NodeOptions {
+   /** «Ресурсы до подписи» (Иван 11.11): подключенным адресам строки с CatFee показывать в GetAccountResource обещанные
+    *  энергию и полосу, иначе TronLink без TRX не дает подписать. Выключатель-файл, читается на каждом чтении. */
+   virtualResources?: () => boolean;
++  /** УТ-1 (Иван 16.11, вариант 1): перевод TRX с адреса, которому узел показывает обещанные ресурсы, не отказ only_usdt, а
++   *  перевод через узел: своей полосы хватает - отправляем; нет - нога bandwidth из Банка (POST /charge {legs:"bandwidth",
++   *  transfer:"trx"}), ждем ее в сети, отправляем; 0,32 сервер спишет после перевода в сети. Выключатель (env + файл). */
++  trxTransfer?: () => boolean;
+ }
+ 
+ /** CatFee Seamless (Иван 11.11, путь А): второй эшелон экономии за нашим узлом, 1,3 TRX за 65k энергии по акции.
+@@ -175,6 +183,8 @@ export const TEXT: Record<string, string> = {
+   same_sent: "Tron One: такой же перевод (кому и сколько) уже ушел только что. Проверь историю кошелька. Нужен второй такой же - отправь через 3 минуты. Этот не отправлен. / Same transfer was just sent: check history; for a second one wait 3 minutes. Nothing sent.",
+   only_usdt: "Tron One: через узел Tron One уходят только переводы USDT. Для других операций переключи узел в TronLink на обычный. Ничего не отправлено. / Only USDT transfers go through the Tron One node; switch node for other operations. Nothing sent.",
+   day_cap: "Tron One: на сегодня лимит зарядок узла исчерпан, завтра снова можно. Перевод не отправлен, TRX не списаны. / Daily node charge limit reached, try tomorrow: nothing sent.",
++  trx_no_bandwidth: "Tron One: полосы для перевода TRX сейчас нет. Перевод не отправлен, TRX и баланс не списаны. Отправь еще раз через минуту. / No bandwidth for the TRX transfer right now: nothing sent, nothing charged. Try again in a minute.",
++  trx_new_recipient: "Tron One: адрес получателя еще не активирован - сеть возьмет за его активацию 1 TRX. Через узел Tron One такой перевод не отправляем, чтобы TRX не сгорели незаметно. Для этого перевода переключи узел в TronLink на обычный. Ничего не отправлено. / Recipient is not activated yet: the network takes 1 TRX to activate it. The Tron One node does not send it, so no TRX burn unnoticed; switch the node for this transfer. Nothing sent.",
+   same_pending: "Tron One: такой же перевод (кому и сколько) уже отправляется. Проверь историю кошелька через минуту. Этот не отправлен. / Same transfer already in progress: check history in a minute. Nothing sent.",
+ };
+ const hexText = (s: string) => bytesToHex(new TextEncoder().encode(s));
+@@ -247,9 +257,10 @@ export function createNode(o: NodeOptions) {
+ 
+   /** Хватает ли адресу ресурса, чтобы перевод прошел без сжигания TRX. Читаем сеть сами, не верим никому на слово. */
+   const resourcesOk = async (t: Trc20Transfer, tx: RawTx): Promise<{ ok: boolean; energyNeed: number; energyHave: number; bwNeed: number; bwHave: number } | null> => {
++    // УТ-1: перевод TRX энергии не тратит - оценку контракта не спрашиваем
+     const [res, est] = await Promise.all([
+       readJson("/wallet/getaccountresource", { address: t.owner, visible: true }),
+-      readJson("/wallet/triggerconstantcontract", { owner_address: t.owner, contract_address: t.contract, function_selector: "transfer(address,uint256)", parameter: t.dataHex.slice(8), visible: true }),
++      isTrx(t) ? Promise.resolve(null) : readJson("/wallet/triggerconstantcontract", { owner_address: t.owner, contract_address: t.contract, function_selector: "transfer(address,uint256)", parameter: t.dataHex.slice(8), visible: true }),
+     ]);
+     if (!res) return null;
+     const n = (k: string) => Number(res[k] ?? 0);
+@@ -259,7 +270,7 @@ export function createNode(o: NodeOptions) {
+     const bwHave = Math.max(staked, free);
+     const used = Number((est as { energy_used?: number } | null)?.energy_used ?? 0);
+     const ok200 = est && (est as { result?: { result?: boolean } }).result?.result === true && used > 0;
+-    const energyNeed = ok200 ? used : ENERGY_FALLBACK;
++    const energyNeed = isTrx(t) ? 0 : ok200 ? used : ENERGY_FALLBACK;
+     // КК Н3: прошлый перевод этого адреса ушел, но еще не в блоке - его ресурс уже потрачен, хоть сеть еще показывает его свободным.
+     let busyE = 0, busyB = 0;
+     const list = (spending.get(t.owner) ?? []).filter((x) => x.until > now() && x.txid !== tx.txID);
+@@ -413,14 +424,14 @@ export function createNode(o: NodeOptions) {
+   };
+ 
+   /** Нога bandwidth с нашего сервера (модель Ивана 11.11): заказ только bandwidth, ждем его в сети до until. */
+-  const bandwidthLeg = async (u: NodeUser, t: Trc20Transfer, tx: RawTx, until: number, mark: (k: string) => void, energy?: { need: number; bw: boolean }): Promise<{ ok: true; id?: string } | { ok: false; reason: string; id?: string; release?: boolean }> => {
++  const bandwidthLeg = async (u: NodeUser, t: Trc20Transfer, tx: RawTx, until: number, mark: (k: string) => void, energy?: { need: number; bw: boolean }, transfer?: "trx"): Promise<{ ok: true; id?: string } | { ok: false; reason: string; id?: string; release?: boolean }> => {
+     if (now() >= until) return { ok: false, reason: "not_charged" };
+     if (!takeCharge(u)) return { ok: false, reason: "too_often" };
+     const LATE: unique symbol = Symbol("late") as never;
+     /** local: отказ самого узла (срок, сбой связи), иначе ответ сервера. */
+     const ask = async (): Promise<ChargeReply & { local?: true }> => {
+       const pending = o.tronone.charge(u.accountKey, t.owner, t.recipient, Math.max(1, until - now()),
+-        energy ? { legs: energy.bw ? "bandwidth" : "none", energy: "catfee", energyNeed: energy.need } : { legs: "bandwidth" });
++        energy ? { legs: energy.bw ? "bandwidth" : "none", energy: "catfee", energyNeed: energy.need } : { legs: "bandwidth", ...(transfer ? { transfer } : {}) });
+       try {
+         const got: ChargeReply | typeof LATE = await Promise.race([pending, deadlineTimer(Math.max(0, until - now())).then((): typeof LATE => LATE)]);
+         if (got === LATE) {
+@@ -436,6 +447,12 @@ export function createNode(o: NodeOptions) {
+     if (!r.ok) return { ok: false, reason: why(r), id: r.id };
+     let rr: ChargeReply = r;
+     if (!energy && rr.legs !== "bandwidth") log(`ALARM node bw_leg_ignored charge=${rr.id ?? "-"} - сервер не понял legs, мог довезти и энергию`);
++    // УТ-1: сервер без поддержки перевода TRX искал бы перевод USDT и списал бы ногу по сроку - такую зарядку не берем
++    if (transfer && rr.transfer !== transfer) {
++      const lid = rr.id ?? rr.view?.id;
++      log(`ALARM node trx_transfer_ignored charge=${lid ?? "-"} - сервер не понял transfer:"trx", перевод не отправлен`);
++      return { ok: false, reason: "unavailable", ...(lid ? { id: lid, release: true } : {}) };
++    }
+     let id = rr.id ?? rr.view?.id;
+     // Версия 0.5: ног нет (сервер видит полосу достаточной или мы не просили) - «можно отправлять» сразу, полосу проверим ниже.
+     // Движок Д-1: сервер сам решает, везти ли ногу (на legs:"none" может ответить only:"bandwidth") - смотрим только на view.only.
+@@ -465,6 +482,7 @@ export function createNode(o: NodeOptions) {
+     // Замер по шагам (мс от начала решения): чтение до, ответ /charge, энергия видна, вторая проверка. Цель Ивана 11.11: медиана 2-3 с.
+     const t0 = now(), steps: Record<string, number> = {};
+     const mark = (k: string) => { steps[k] = now() - t0; };
++    if (isTrx(t)) return { ...(await decideTrx(u, tx, t, deadline, mark, need)), steps };
+     const leg: { id?: string } = {};
+     const d = await decideInner(u, tx, t, deadline, mark, fullHex, gone, need, leg);
+     // Запасной путь (CATFEE_NO_FALLBACK=off): нога bandwidth куплена, CatFee отказал, полная зарядка тоже не дала перевод -
+@@ -570,6 +588,27 @@ export function createNode(o: NodeOptions) {
+     return { broadcast: true, reason: r.nothingToCharge ? "nothing_to_charge" : "charged", chargeId: id };
+   };
+ 
++  /**
++   * УТ-1 (Иван 16.11, вариант 1): перевод TRX. Энергии не нужно - только полоса. Своей хватает - отправляем без зарядки.
++   * Нет - нога bandwidth из Банка ({legs:"bandwidth", transfer:"trx"}), ждем ее в сети до срока, отправляем.
++   * Получатель не активирован - отказ до зарядки: сеть сожгла бы 1 TRX за активацию, а кошелек об этом молчит (подмена ресурсов).
++   */
++  const decideTrx = async (u: NodeUser, tx: RawTx, t: Trc20Transfer, deadline: number, mark: (k: string) => void, need: { energy: number; bw: number }): Promise<Decision> => {
++    const [before, to] = await Promise.all([resourcesOk(t, tx), readJson("/wallet/getaccount", { address: t.recipient, visible: true })]);
++    mark("read_before");
++    if (!before || !to) return { broadcast: false, reason: "unavailable" };
++    need.energy = 0; need.bw = before.bwNeed;
++    // Ревью Fable М3: активный адрес - только ответ с полем address; ответ-ошибка с телом не считается активным
++    if (typeof to["address"] !== "string" || !to["address"]) return Object.keys(to).length === 0 || to["Error"] === undefined ? { broadcast: false, reason: "trx_new_recipient" } : { broadcast: false, reason: "unavailable" };
++    if (before.bwHave >= before.bwNeed) return { broadcast: true, reason: "own_resources" };
++    const leg = await bandwidthLeg(u, t, tx, deadline, mark, undefined, "trx");
++    if (!leg.ok) {
++      const reason = leg.reason === "not_charged" ? "trx_no_bandwidth" : leg.reason;
++      return { broadcast: false, reason, chargeId: leg.id, ...(leg.id && leg.release ? { notUsed: "low_resources" as const } : {}) };
++    }
++    return { broadcast: true, reason: "charged", ...(leg.id ? { chargeId: leg.id } : {}) };
++  };
++
+   /** Возврат по зарядке, которую узел не отпустил: 3 попытки, потом ALARM для ручного разбора. */
+   const releaseLater = async (id: string, reason: "late_25s" | "low_resources") => {
+     for (let k = 0; k < 3; k++) {
+@@ -600,8 +639,14 @@ export function createNode(o: NodeOptions) {
+     if (path === "/wallet/broadcasttransaction" && j["raw_data"] !== undefined && !rawJsonMatches(j["raw_data"], tx)) return refuse(tx.txID, "bad_tx");
+     let t: Trc20Transfer | null;
+     try { t = trc20TransferOf(tx); } catch { return refuse(tx.txID, "bad_tx"); }
++    // УТ-1: перевод TRX с адреса, которому узел обещает ресурсы, - через узел (полоса из Банка), а не отказ only_usdt
++    if (!t && tx.contracts[0]?.type === 1 && o.trxTransfer?.()) {
++      let x: ReturnType<typeof trxTransferOf>;
++      try { x = trxTransferOf(tx); } catch { return refuse(tx.txID, "bad_tx"); }
++      if (x && promises(u, x.owner)) t = { owner: x.owner, contract: TRX, recipient: x.recipient, amount: x.amount, dataHex: "" };
++    }
+     // Не перевод USDT - не наше дело: в сеть как есть.
+-    if (!t || t.contract !== usdt) {
++    if (!t || (t.contract !== usdt && !isTrx(t))) {
+       // КК Р-1: адресу, которому узел показывает обещанные ресурсы, кошелек не предупредил о комиссии - другая операция
+       // сожгла бы его TRX молча. Пока действует подмена, через узел уходят только переводы USDT.
+       const ob = tx.contracts[0] ? bytesField(tx.contracts[0].value, 1) : null;
+@@ -616,7 +661,7 @@ export function createNode(o: NodeOptions) {
+     if (running) return running;
+ 
+     const work = (async (): Promise<UpstreamReply> => {
+-      const rec: Record<string, unknown> = { at: new Date(started).toISOString(), user: u.id, txid: tx.txID, from: mask(t.owner), to: mask(t.recipient), amount: t.amount.toString() };
++      const rec: Record<string, unknown> = { at: new Date(started).toISOString(), user: u.id, txid: tx.txID, from: mask(t.owner), to: mask(t.recipient), amount: t.amount.toString(), ...(isTrx(t) ? { asset: "trx" } : {}) };
+       const finish = (r: UpstreamReply, d: Decision) => {
+         rec.decision = d.broadcast ? "broadcast" : "refused"; rec.reason = d.reason; rec.ms = now() - started;
+         if (d.chargeId) rec.charge = d.chargeId;
+@@ -692,6 +737,13 @@ export function createNode(o: NodeOptions) {
+         // В сеть - ровно проверенные байты (broadcasthex), ответ - в виде broadcasttransaction, как ждет кошелек.
+         const r = normalize(await send("/wallet/broadcasthex", JSON.stringify({ transaction: encodeTransactionHex(rawHex, sigs) }), tx.txID));
+         if (!okOf(r)) unbusy();
++        // УТ-1 (П3): сеть прямо отклонила перевод TRX (ответ с кодом) - его нет и не будет, нога не использована:
++        // удержание снимаем сейчас, а не по сроку (Иван 16.11: отказ сети - не списываем). Неясный ответ (5xx) - не трогаем.
++        if (isTrx(t) && d.chargeId && rejected(r) && o.tronone.notUsed) {
++          rec.network_rejected = true;
++          log(`ALARM node charge_not_used user=${u.id} charge=${d.chargeId} reason=low_resources txid=${tx.txID} (сеть отклонила перевод TRX)`);
++          void releaseLater(d.chargeId, "low_resources");
++        }
+         return finish(r, d);
+       };
+       if (!early) return settle(await mine, ctx.gone?.() === true);
+@@ -1007,6 +1059,11 @@ function normalize(r: UpstreamReply): UpstreamReply {
+   } catch { return r; }
+ }
+ 
++/** УТ-1: перевод TRX в зарядке - контракт-метка вместо адреса USDT. */
++const TRX = "TRX";
++const isTrx = (t: Trc20Transfer) => t.contract === TRX;
++/** Сеть прямо отказала (200 с кодом и без result:true): перевод не принят. */
++const rejected = (r: UpstreamReply) => { if (r.status !== 200) return false; try { const j = JSON.parse(r.body) as { result?: boolean; code?: string }; return j.result !== true && typeof j.code === "string" && j.code !== "SUCCESS"; } catch { return false; } };
+ const okOf = (r: UpstreamReply) => { try { return (JSON.parse(r.body) as { result?: boolean }).result === true; } catch { return false; } };
+ const mask = (a: string) => `${a.slice(0, 4)}…${a.slice(-4)}`;
+ 
+diff --git a/src/tx.ts b/src/tx.ts
+index 1f8d9ce..e9fa409 100644
+--- a/src/tx.ts
++++ b/src/tx.ts
+@@ -173,6 +173,22 @@ export function trc20TransferOf(tx: RawTx): Trc20Transfer | null {
+   return { owner: base58check(owner), contract: base58check(contract), recipient: base58check(r), amount: BigInt("0x" + word2), dataHex };
+ }
+ 
++/** Тип контракта TransferContract (перевод TRX) в Transaction.Contract.ContractType. */
++export const TRANSFER_CONTRACT = 1;
++const TRANSFER: Spec = { 1: [2], 2: [2], 3: [0] };
++
++/** УТ-1: перевод TRX (TransferContract: owner_address=1, to_address=2, amount=3) из одного контракта; иначе null. */
++export function trxTransferOf(tx: RawTx): { owner: string; recipient: string; amount: bigint } | null {
++  if (tx.contracts.length !== 1) return null;
++  const c = tx.contracts[0]!;
++  if (c.type !== TRANSFER_CONTRACT) return null;
++  let f: Field[];
++  try { f = strict(readFields(c.value), TRANSFER, "transfer"); } catch { throw new Error("bad transfer"); }
++  const owner = one(f, 1)[0]?.bytes, to = one(f, 2)[0]?.bytes, amount = one(f, 3)[0]?.int ?? 0n;
++  if (!owner || owner.length !== 21 || owner[0] !== 0x41 || !to || to.length !== 21 || to[0] !== 0x41 || amount <= 0n) return null;
++  return { owner: base58check(owner), recipient: base58check(to), amount };
++}
++
+ /** Адрес, который подписал txID (одна подпись r||s||v). null - подпись не читается. */
+ export function signerOf(txID: string, signature: string): string | null {
+   try {
+diff --git a/test/helpers.ts b/test/helpers.ts
+index 113118a..89e3b17 100644
+--- a/test/helpers.ts
++++ b/test/helpers.ts
+@@ -29,6 +29,18 @@ export function buildTransfer(o: { key: Uint8Array; to: string; amount: bigint;
+   const signature = bytesToHex(sig.slice(1)) + (sig[0]! + 0).toString(16).padStart(2, "0");
+   return { txID, raw_data_hex: bytesToHex(raw), signature: [signature], raw_data: { expiration: o.expiration, contract: [{ type: (o.contractType ?? 31) === 31 ? "TriggerSmartContract" : "Other" }] }, visible: false };
+ }
++/** УТ-1: подписанный перевод TRX (TransferContract: owner=1, to=2, amount=3). */
++export function buildTrxTransfer(o: { key: Uint8Array; to: string; amount: bigint; expiration: number }) {
++  const owner = decodeBase58check(addrOf(o.key)), to = decodeBase58check(o.to);
++  const value = [...fBytes(1, owner), ...fBytes(2, to), ...fInt(3, o.amount)];
++  const any = [...fBytes(1, new TextEncoder().encode("type.googleapis.com/protocol.TransferContract")), ...fBytes(2, value)];
++  const c = [...fInt(1, 1), ...fBytes(2, any)];
++  const raw = Uint8Array.from([...fBytes(1, [0xab, 0xcd]), ...fBytes(4, new Uint8Array(8).fill(1)), ...fInt(8, o.expiration), ...fBytes(11, c), ...fInt(14, o.expiration - 60_000)]);
++  const txID = bytesToHex(sha256(raw));
++  const sig = secp.sign(hexToBytes(txID), o.key, { prehash: false, format: "recovered" });
++  const signature = bytesToHex(sig.slice(1)) + (sig[0]! + 0).toString(16).padStart(2, "0");
++  return { txID, raw_data_hex: bytesToHex(raw), signature: [signature], raw_data: { expiration: o.expiration, contract: [{ type: "TransferContract" }] }, visible: false };
++}
+ export const txHex = (t: { raw_data_hex: string; signature: string[] }) => encodeTransactionHex(t.raw_data_hex, t.signature);
+ 
+ export const tokenFor = (s: string) => s.padEnd(43, "x");
+@@ -40,7 +52,7 @@ export interface World {
+   energy: number; bw: number;
+   estimate: number | null;
+   calls: { path: string; body?: string; at: number }[];
+-  charges: { sender: string; recipient: string; at: number; legs?: string }[];
++  charges: { sender: string; recipient: string; at: number; legs?: string; transfer?: string }[];
+   broadcasts: { body: string; at: number }[];
+   /** что ответит /charge */
+   chargeReply: (w: World) => ChargeReply | Promise<ChargeReply>;
+@@ -60,6 +72,8 @@ export interface World {
+   burnSun?: number;
+   /** КК Н3: отправленные переводы еще не в блоке (сеть показывает ресурс свободным) */
+   notInBlock?: boolean;
++  /** УТ-1: адреса, которых нет в сети (getaccount отвечает {}) */
++  newAccounts?: Set<string>;
+ }
+ 
+ export function makeWorld(over: Partial<World> = {}): World {
+@@ -89,6 +103,7 @@ export function nodeFor(w: World, users: NodeUser[], opts: Partial<NodeOptions>
+       w.calls.push({ path, body, at: w.t });
+       if (path === "/wallet/getaccountresource") return { status: 200, body: JSON.stringify({ EnergyLimit: w.energy, EnergyUsed: 0, NetLimit: w.bw, NetUsed: 0, freeNetLimit: 0, freeNetUsed: 0 }) };
+       if (path === "/wallet/triggerconstantcontract") return w.estimate === null ? { status: 500, body: "x" } : { status: 200, body: JSON.stringify({ result: { result: true }, energy_used: w.estimate }) };
++      if (path === "/wallet/getaccount") { const a = JSON.parse(body ?? "{}").address; return { status: 200, body: w.newAccounts?.has(a) ? "{}" : JSON.stringify({ address: a, balance: 1 }) }; }
+       if (path === "/wallet/gettransactionbyid") { const v = JSON.parse(body ?? "{}").value; return { status: 200, body: JSON.stringify(w.onChainTx?.has(v) ? { txID: v } : {}) }; }
+       if (path === "/wallet/gettransactioninfobyid") { const v = JSON.parse(body ?? "{}").value; return { status: 200, body: JSON.stringify(w.notInBlock ? {} : { id: v, blockNumber: 1, receipt: { energy_fee: w.burnSun ?? 0 } }) }; }
+       if (path === "/wallet/broadcasthex" || path === "/wallet/broadcasttransaction") {
+@@ -101,7 +116,7 @@ export function nodeFor(w: World, users: NodeUser[], opts: Partial<NodeOptions>
+     },
+     tronone: {
+       charge: async (_k, sender, recipient, _ms, opts) => {
+-        w.charges.push({ sender, recipient, at: w.t, ...(opts?.legs ? { legs: opts.legs } : {}) });
++        w.charges.push({ sender, recipient, at: w.t, ...(opts?.legs ? { legs: opts.legs } : {}), ...(opts?.transfer ? { transfer: opts.transfer } : {}) });
+         const r = await w.chargeReply(w);
+         if (r.ok && r.view?.ready) w.onReady(w);
+         return r;
+diff --git a/test/trx.test.ts b/test/trx.test.ts
+new file mode 100644
+index 0000000..1f6c133
+--- /dev/null
++++ b/test/trx.test.ts
+@@ -0,0 +1,116 @@
++// УТ-1 (Иван 16.11, вариант 1): перевод TRX с адреса, которому узел показывает обещанные ресурсы, идет через узел.
++// Полосы нет - нога bandwidth из Банка ({legs:"bandwidth", transfer:"trx"}), ждем ее в сети, отправляем; 0,32 спишет сервер
++// после перевода. Сеть отклонила - удержание снимаем сразу (П3). Получатель не активирован - отказ до зарядки (1 TRX сгорел бы).
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import type { CatFee, ChargeReply, UpstreamReply } from "../src/node.ts";
++import { buildTransfer, buildTrxTransfer, keyOf, addrOf, makeWorld, nodeFor, userOf, tokenFor, msg, type World } from "./helpers.ts";
++
++const IVAN = keyOf(1), ivan = addrOf(IVAN), bank = addrOf(keyOf(2));
++const url = `/n/${tokenFor("ivan")}/wallet/broadcasttransaction`;
++const trx = (w: { t: number }, to = bank) => buildTrxTransfer({ key: IVAN, to, amount: 130_000_000n, expiration: w.t + 55_000 });
++const LEG: ChargeReply = { ok: true, id: "t1", legs: "bandwidth", transfer: "trx", view: { id: "t1", status: "ready", ready: true, only: "bandwidth" } };
++
++function setup(over: Partial<World> = {}, o: { on?: boolean; vres?: boolean } = {}) {
++  const w = makeWorld({ bw: 0, energy: 0, chargeReply: () => LEG, onReady: (x) => { x.bw = 351; }, ...over });
++  const catfee: CatFee = { enabled: () => true, maxPerDay: 15, waitMs: 8_000, broadcast: async () => ({ status: 200, body: JSON.stringify({ result: true }) }) };
++  const call = nodeFor(w, [userOf("ivan", [ivan], { catfee: true })], {
++    catfee, catfeeNoFallback: true, energyBill: true, virtualResources: () => o.vres ?? true, trxTransfer: () => o.on ?? true, acceptEarly: false,
++  });
++  return { w, call };
++}
++const tick = () => new Promise((r) => setImmediate(r));
++
++test("П1: полосы нет - нога из Банка с transfer:trx, полоса в сети, перевод ушел; оценки контракта нет, энергия не заказана", async () => {
++  const { w, call } = setup();
++  const r = await call("POST", url, trx(w));
++  assert.equal(r.json.result, true, JSON.stringify(r.json));
++  assert.deepEqual(w.charges.map((c) => [c.legs, c.transfer]), [["bandwidth", "trx"]]);
++  assert.equal(w.broadcasts.length, 1);
++  assert.ok(!w.calls.some((c) => c.path === "/wallet/triggerconstantcontract"), "перевод TRX энергии не тратит");
++  const rec = w.journal.find((j) => j.decision)!;
++  assert.deepEqual([rec.asset, rec.reason, rec.charge], ["trx", "charged", "t1"]);
++  await tick();
++  assert.deepEqual(w.released, []);
++});
++
++test("своей полосы хватает - без зарядки, сразу в сеть (денег не берем)", async () => {
++  const { w, call } = setup({ bw: 400 });
++  const r = await call("POST", url, trx(w));
++  assert.equal(r.json.result, true);
++  assert.equal(w.charges.length, 0); assert.equal(w.broadcasts.length, 1);
++});
++
++test("получатель не активирован - отказ до зарядки: сеть сожгла бы 1 TRX молча", async () => {
++  const fresh = addrOf(keyOf(9));
++  const { w, call } = setup({ newAccounts: new Set([fresh]) });
++  const r = await call("POST", url, trx(w, fresh));
++  assert.equal(r.json.tronone, "trx_new_recipient");
++  assert.match(msg(r.json), /не активирован/);
++  assert.equal(w.charges.length, 0); assert.equal(w.broadcasts.length, 0);
++});
++
++test("П3: сеть отклонила перевод TRX (код) - удержание снимается сразу (low_resources), кошельку ответ сети", async () => {
++  const { w, call } = setup({ broadcastReply: (): UpstreamReply => ({ status: 200, body: JSON.stringify({ code: "CONTRACT_VALIDATE_ERROR", txid: "x", message: "62616c616e6365" }) }) });
++  const r = await call("POST", url, trx(w));
++  assert.equal(r.json.code, "CONTRACT_VALIDATE_ERROR");
++  await tick(); await tick();
++  assert.deepEqual(w.released, [{ id: "t1", reason: "low_resources" }]);
++  assert.ok(w.logs.some((l) => l.includes("сеть отклонила перевод TRX")));
++});
++
++test("неясный ответ сети (5xx) - удержание не трогаем: перевод мог уйти", async () => {
++  const { w, call } = setup({ broadcastReply: (): UpstreamReply => ({ status: 502, body: "{}" }) });
++  await call("POST", url, trx(w));
++  await tick();
++  assert.deepEqual(w.released, []);
++});
++
++test("полоса не легла до срока - отказ «полосы нет», TRX и баланс не списаны, удержание снято", async () => {
++  const { w, call } = setup({ chargeReply: () => ({ ...LEG, view: { id: "t1", status: "delivering", ready: false } }), onReady: () => {}, views: [{ id: "t1", status: "delivering", ready: false }] });
++  const r = await call("POST", url, trx(w));
++  assert.equal(r.json.tronone, "trx_no_bandwidth");
++  assert.match(msg(r.json), /полосы для перевода TRX сейчас нет/);
++  assert.equal(w.broadcasts.length, 0);
++  await tick(); await tick();
++  assert.deepEqual(w.released, [{ id: "t1", reason: "low_resources" }]);
++});
++
++test("сервер не понял transfer:trx (старый сервер) - перевод не отправлен, удержание снято, ALARM", async () => {
++  const { w, call } = setup({ chargeReply: () => ({ ok: true, id: "t1", legs: "bandwidth", view: { id: "t1", status: "ready", ready: true } }) });
++  const r = await call("POST", url, trx(w));
++  assert.equal(r.json.tronone, "unavailable");
++  assert.equal(w.broadcasts.length, 0);
++  await tick(); await tick();
++  assert.deepEqual(w.released, [{ id: "t1", reason: "low_resources" }]);
++  assert.ok(w.logs.some((l) => l.includes("trx_transfer_ignored")));
++});
++
++test("нет денег на счете - честный отказ, ничего не отправлено", async () => {
++  const { w, call } = setup({ chargeReply: () => ({ ok: false, reason: "insufficient_balance" }) });
++  const r = await call("POST", url, trx(w));
++  assert.equal(r.json.tronone, "no_balance"); assert.equal(w.broadcasts.length, 0);
++});
++
++test("выключатель off - прежний отказ only_usdt; без подмены ресурсов - перевод TRX как есть, без зарядки", async () => {
++  const off = setup({}, { on: false });
++  const r = await off.call("POST", url, trx(off.w));
++  assert.equal(r.json.tronone, "only_usdt"); assert.equal(off.w.broadcasts.length, 0);
++  const plain = setup({}, { vres: false });
++  const r2 = await plain.call("POST", url, trx(plain.w));
++  assert.equal(r2.json.result, true); assert.equal(plain.w.charges.length, 0); assert.equal(plain.w.broadcasts.length, 1);
++});
++
++test("другой токен (не USDT, не TRX) - по-прежнему only_usdt при подмене", async () => {
++  const { w, call } = setup();
++  const r = await call("POST", url, buildTransfer({ key: IVAN, to: bank, amount: 1n, expiration: w.t + 55_000, contract: bank }));
++  assert.equal(r.json.tronone, "only_usdt"); assert.equal(w.broadcasts.length, 0);
++});
++
++test("перевод TRX не подписан владельцем - отказ bad_signature без зарядки", async () => {
++  const { w, call } = setup();
++  const t = trx(w);
++  const forged = { ...t, signature: [buildTrxTransfer({ key: keyOf(5), to: bank, amount: 1n, expiration: w.t + 55_000 }).signature[0]!] };
++  const r = await call("POST", url, forged);
++  assert.equal(r.json.tronone, "bad_signature"); assert.equal(w.charges.length, 0);
++});
