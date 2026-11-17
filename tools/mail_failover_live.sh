@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Шаг 1.3 плана: живая проверка запасного почтовика (Resend) в бою. Мак, Терминал или сессия Мака по фразе Ивана.
-#   bash mail_failover_live.sh key     - ИВАН, один раз: файл ~/.tronone/resend_key.env (600) открывается в TextEdit, Иван вставляет ключ,
+#   bash mail_failover_live.sh key     - ИВАН, один раз: ключ из общего ~/tron-one/.env (RESEND_API_KEY, вписывает Иван),
 #                                        проверка ключа и домена в Resend, запись RESEND_API_KEY и RESEND_FROM в .env боя (бэкап).
 #                                        Джарвис не перезапускаем: ключ подхватит очередная выкладка.
 #   bash mail_failover_live.sh check   - только чтение: ключ в бою, домен подтвержден, в бою код с переключением на 401/403. ЗЕЛЕНО/СТОП
@@ -15,7 +15,7 @@ K="${UPCLOUD_SSH_KEY:-$HOME/.ssh/tronone_upcloud}"
 PROD="${PROD_SSH:-ubuntu@100.107.227.45}"
 SSHO=(-o BatchMode=yes -i "$K" -o IdentitiesOnly=yes -o HostKeyAlias=94.237.4.105)
 PENV="${PROD_ENV:-/home/ubuntu/tron-one/.env}"
-SEC="$HOME/.tronone"; RK="$SEC/resend_key.env"
+RK="$HOME/tron-one/.env"   # Иван 17.11: все ключи - в одном общем .env Мака, отдельных файлов не плодить
 FROM="${RESEND_FROM:-code@tronone.io}"
 U=tronone-jarvis
 h8() { shasum -a 256 2>/dev/null | cut -c1-8 || sha256sum | cut -c1-8; }
@@ -35,21 +35,13 @@ print(m[0].get("status","?") if m else "домена "+d+" нет в Resend")' "
 
 case "$MODE" in
 key)
-  # Иван 17.11: ключ кладет в файл сам - файл 600 открывается в TextEdit, Иван вставляет ключ, сохраняет, Enter
-  ( umask 077; mkdir -p "$SEC"; touch "$RK" ); chmod 600 "$RK"
-  if ! grep -q 're_' "$RK" 2>/dev/null; then
-    printf 'RESEND_API_KEY=\n' > "$RK"
-    open -e "$RK" 2>/dev/null || true
-    echo "Открыт файл $RK. Вставь ключ сразу после RESEND_API_KEY= , сохрани (Cmd+S), закрой и нажми Enter здесь."
-    read -r _
-  fi
-  KEY="$(grep -oE 're_[A-Za-z0-9_-]+' "$RK" | head -1)"
-  case "$KEY" in re_*) ;; *) echo "СТОП: ключ пустой или не начинается с re_"; exit 1;; esac
-  printf 'RESEND_API_KEY=%s\n' "$KEY" > "$RK"; chmod 600 "$RK"
+  # Иван 17.11: ключ Иван сам вписывает в общий ~/tron-one/.env строкой RESEND_API_KEY=re_... ; скрипт только читает
+  KEY="$(grep -E '^RESEND_API_KEY=' "$RK" 2>/dev/null | tail -1 | cut -d= -f2- | tr -d '"[:space:]')"
+  case "$KEY" in re_*) ;; *) echo "СТОП: в $RK нет строки RESEND_API_KEY=re_..."; exit 1;; esac
   ST="$(resend_domain "$KEY")"
   echo "ключ на Маке: <sha $(printf %s "$KEY" | h8)>, домен ${FROM##*@} в Resend: $ST"
   # «ключ отклонен: restricted_api_key» - ключ только на отправку: домен им не прочитать, это нормально
-  case "$ST" in verified|*restricted*) ;; *) echo "СТОП: домен не подтвержден - письма Resend не уйдут. Ключ сохранен на Маке, в бой не записан."; exit 1;; esac
+  case "$ST" in verified|*restricted*) ;; *) echo "СТОП: домен не подтвержден - письма Resend не уйдут. В бой не записан."; exit 1;; esac
   { printf 'RK=%q\nRF=%q\n' "$KEY" "$FROM"; sed "s#__PENV__#$PENV#" <<'REMOTE'
 set -uo pipefail
 E="__PENV__"; [ -f "$E" ] || { echo "СТОП: нет $E"; exit 1; }
