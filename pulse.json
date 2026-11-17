@@ -6,14 +6,7 @@
   8
  ],
  "повтор_минут": 120,
- "шаги": [
-  {
-   "ид": "СА-1",
-   "последняя": "2026-11-17T13:33+0300",
-   "тревога_после": "2026-11-17T14:13+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtRG5LjE5Ph6oZnExWYR2X68"
-  }
- ],
+ "шаги": [],
  "старт": "2026-12-10",
  "запущено": false,
  "сделано": {
