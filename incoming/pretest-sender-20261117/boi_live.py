@@ -20,8 +20,8 @@ SSH = ["ssh", "-i", "~/.ssh/tronone_upcloud", "-o", "BatchMode=yes", "-o", "Conn
 IVAN = "TNbpjh52ZS4rjC2BAPeefsbak4EWDq6qEy"
 # Правило №0 17.11: проверка перед тестом смотрит только адрес отправителя (tron.py test --from). Адреса берем из
 # users.json узла боя (только поле addresses), в сводку кладем ключом sha256[:16] - адресов в открытом репо нет.
-NODE_SSH = os.environ.get("NODE_SSH", "ubuntu@100.78.56.33").split()
-NODE_USERS = os.environ.get("NODE_USERS", "/opt/tronone-node/users.json")
+NODE_SSH = os.environ.get("NODE_SSH", "-i ~/.ssh/tronone_upcloud -o IdentitiesOnly=yes -o HostKeyAlias=5.22.209.44 root@100.78.56.33").split()
+NODE_USERS = os.environ.get("NODE_USERS", "/srv/node/users.json")
 SENDERS_MAX = 30
 BANK = "TSJK55YRgBojtLS4bgfzgchzR1FmseoGaP"
 REPO = "pit5577/tron-one-pulse"
@@ -56,7 +56,7 @@ def node_addresses():
     """Адреса из users.json узла боя (только чтение, без ключей)."""
     py = ("import json,sys;d=json.load(open(sys.argv[1]));u=d.values() if isinstance(d,dict) else d;"
           "print('\\n'.join(sorted({a for x in u if isinstance(x,dict) for a in (x.get('addresses') or [])})))")
-    r = subprocess.run(["ssh", "-o", "BatchMode=yes", "-o", "ConnectTimeout=15"] + NODE_SSH + ["sudo", "python3", "-c", py, NODE_USERS],
+    r = subprocess.run(["ssh", "-o", "BatchMode=yes", "-o", "ConnectTimeout=15"] + [os.path.expanduser(x) for x in NODE_SSH] + ["python3", "-c", py, NODE_USERS],
                        capture_output=True, text=True, timeout=60)
     if r.returncode:
         raise RuntimeError("узел: " + (r.stderr.strip()[-120:] or f"код {r.returncode}"))
