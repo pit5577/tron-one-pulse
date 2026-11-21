@@ -1,24 +1,9 @@
-RED|КРАСНОЕ: шаг 3, исключение: потолок прогона 10 TRX: уже 6, просят 5
-Профиль «как Иван» (только TRX): GREEN|ЗЕЛЕНО
-Профиль «с USDT»: RED|КРАСНОЕ: шаг 3, исключение: потолок прогона 10 TRX: уже 6, просят 5
-RED правило П3.numfmt (chromium): en, главный экран: разные десятичные разделители на одном экране (0,51 и 4.49)
-RED правило П3.numfmt (chromium): zh, главный экран: разные десятичные разделители на одном экране (0,51 и 4.49)
-RED правило П3.numfmt (webkit): en, главный экран: разные десятичные разделители на одном экране (0,51 и 4.49)
-RED правило П3.numfmt (webkit): zh, главный экран: разные десятичные разделители на одном экране (0,51 и 4.49)
-OK  chromium/trx 1 открыть страницу: холодный старт 253 мс; сборка на странице 20261117185616; ожидали 20261117185616; service worker: ready; после перезагрузки сборка 20261117185616
-OK  chromium/trx 2 вход: вход по robot+20261119@tronone.io за 4179 мс
-OK  chromium/trx 3 пополнение: адрес пополнения T…aYXx; перевод 5 TRX e64ba26a210d006a8f7cf228a911fb06e53f1334043d6322e3f4d8c1641997bf SUCCESS; баланс до 0, после 5; зачислено за 105 с
-OK  chromium/trx 4 баланс: на экранах {"кнопка":5,"окно пополнения":5}; ожидали 5
-OK  chromium/trx 5 зарядка: цена «Зарядить за 0,51 TRX»; ответ сервера 200 {"ok":true,"id":"79882a7b-0d13-4c7b-8a5d-f02be33f0482","view":{"misdirect":null,"id":"79882a7b-0d13-4c7b-8a5d-f02be33f0482","sender":"T…qyFu","recipient":"TFgfBs4CWHCKVYzkF; на цепочке до: энергия 0, полоса стейк 0; после: энергия 17754, полоса стейк 354
-OK  chromium/trx 6 отправка: перевод 1 TRX 35aab5b25fba9f1689742d29135d6d864be24e01f64007247ee9c7baa755d0e7 SUCCESS, сожжено 0 TRX; выписка показывает зарядку: История 4,49 TRX хватит примерно на 2 перевода Пополнить СЕГОДНЯ, 19 НОЯБРЯ ПЕРЕВОДОВ: 1 · 0,51 TRX 04:32 Получатель энергия 0,51 0,51 в работе 04:31 Пополнение +5,00 Раньше: октябрь 2026 г. Месяц · C
-OK  chromium/trx 7 языки: ru/en/zh, баланс {"ru":4.49,"en":4.49,"zh":4.49}, кириллицы в en/zh нет
-OK  chromium/usdt 1 открыть страницу: холодный старт 71 мс; сборка на странице 20261117185616; ожидали 20261117185616; service worker: ready; после перезагрузки сборка 20261117185616
-OK  chromium/usdt 2 вход: вход по robot+20261119-usdt@tronone.io за 4952 мс
-RED chromium/usdt 3 робот: исключение: потолок прогона 10 TRX: уже 6, просят 5
-OK  webkit/trx 1 открыть страницу: холодный старт 823 мс; сборка на странице 20261117185616; ожидали 20261117185616; service worker: ready; после перезагрузки сборка 20261117185616
-OK  webkit/trx 2 вход: вход по robot+20261119@tronone.io за 2686 мс
-OK  webkit/trx 4 баланс: на экранах {"кнопка":4.49,"окно пополнения":4.49}; ожидали (не проверяем)
-OK  webkit/trx 7 языки: ru/en/zh, баланс {"ru":4.49,"en":4.49,"zh":4.49}, кириллицы в en/zh нет
-потрачено TRX: 6 из 10
-отчет: /Users/ivan/tron-one-patches/sandbox-robot/runs/20261119T013012Z
+RED|КРАСНОЕ: шаг 1, исключение: page.goto: net::ERR_CONNECTION_REFUSED at https://localhost:18443/
+Профиль «как Иван» (только TRX): RED|КРАСНОЕ: шаг 1, исключение: page.goto: net::ERR_CONNECTION_REFUSED at https://localhost:18443/
+Профиль «с USDT»: RED|КРАСНОЕ: шаг 1, исключение: page.goto: net::ERR_CONNECTION_REFUSED at https://localhost:18443/
+RED chromium/trx 1 робот: исключение: page.goto: net::ERR_CONNECTION_REFUSED at https://localhost:18443/
+RED chromium/usdt 1 робот: исключение: page.goto: net::ERR_CONNECTION_REFUSED at https://localhost:18443/
+RED webkit/trx 1 робот: исключение: page.goto: Could not connect to the server.
+потрачено TRX всего: 0; потолок на профиль: 10
+отчет: /Users/ivan/tron-one/build/sandbox_robot/runs/20261121T003923Z
 sandbox RELEASE prefix=prod-20261118-0935 dev=08194f0963c615362197f02aad8cda1d1639c7f1; страница сборки 20261117185616
