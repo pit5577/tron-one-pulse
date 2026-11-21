@@ -93,9 +93,28 @@ async function tok(k: Uint8Array, token: string, to: string, minor: bigint, l: s
 }
 const res = async (a: string) => post("/wallet/getaccountresource", { address: a, visible: true });
 const tokenAddr = () => { const f = join(ROBOT_DIR, "token.addr"); if (!existsSync(f)) throw new Error("нет token.addr: сначала node tusdt_robot.ts init"); return readFileSync(f, "utf8").trim(); };
+let RUN = false; // last.json пишет только прогон run: check/give/send итог прогона не затирают
+const lastRed = (why: string) => { if (RUN) writeFileSync(join(ROBOT_DIR, "last.json"), JSON.stringify({ at: new Date().toISOString(), verdict: "КРАСНОЕ", why })); };
 async function lockOrDie(addr: string) {
   const l = tokenLock(addr, await post("/wallet/getcontract", { value: addr, visible: true }));
-  log(`замок: ${l.why}`); if (!l.ok) { writeFileSync(join(ROBOT_DIR, "last.json"), JSON.stringify({ at: new Date().toISOString(), verdict: "КРАСНОЕ", why: l.why })); log("ДЭ-2 робот: КРАСНОЕ (замок)"); process.exit(3); }
+  log(`замок: ${l.why}`); if (!l.ok) { lastRed(l.why); log("ДЭ-2 робот: КРАСНОЕ (замок)"); process.exit(3); }
+}
+/** Сколько TRX стейка можно делегировать: сеть вычитает долю уже потраченной энергии. Нужно sun, доступно max -> сколько доморозить. */
+export function topUpStake(needSun: number, maxSun: number, balanceSun: number): number {
+  if (maxSun >= needSun) return 0;
+  const want = needSun * 3 - maxSun; const room = balanceSun - 50e6; // 50 TRX оставляем на полосу и активации
+  if (room < needSun) throw new Error(`стейка не хватает: делегировать можно ${maxSun / 1e6} TRX, нужно ${needSun / 1e6}, свободно ${balanceSun / 1e6} TRX - кран nile_tap.sh trx владельцу`);
+  return Math.ceil(Math.min(want, room) / 1e6) * 1e6;
+}
+async function ensureDelegatable(k: Uint8Array, me: string, sun: number) {
+  const m = await post("/wallet/getcandelegatedmaxsize", { owner_address: me, type: 1, visible: true });
+  const max = Number(m?.max_size ?? 0); const acc = await post("/wallet/getaccount", { address: me, visible: true });
+  const add = topUpStake(sun, max, Number(acc.balance ?? 0));
+  log(`стейк для делегирования: можно ${max / 1e6} TRX, нужно ${sun / 1e6}${add ? `, доморозка ${add / 1e6} TRX` : ""}`);
+  if (!add) return;
+  await send(await post("/wallet/freezebalancev2", { owner_address: me, frozen_balance: add, resource: "ENERGY", visible: true }), k, `доморозка ${add / 1e6} TRX на энергию`);
+  const m2 = Number((await post("/wallet/getcandelegatedmaxsize", { owner_address: me, type: 1, visible: true }))?.max_size ?? 0);
+  if (m2 < sun) throw new Error(`после доморозки делегировать можно ${m2 / 1e6} TRX, нужно ${sun / 1e6}`);
 }
 
 async function init() {
@@ -133,6 +152,7 @@ async function run() {
   const est = await post("/wallet/triggerconstantcontract", { owner_address: a2, contract_address: token, function_selector: "transfer(address,uint256)", parameter: addrParam(me) + u256(5_000_000n), visible: true });
   const need = Math.ceil(Number(est.energy_used ?? 30_000) * 1.2); const rm = await res(me);
   const sun = Math.max(1, Math.ceil(need * Number(rm.TotalEnergyWeight) / Number(rm.TotalEnergyLimit))) * 1_000_000;
+  await ensureDelegatable(k, me, sun);
   await send(await post("/wallet/delegateresource", { owner_address: me, receiver_address: a2, balance: sun, resource: "ENERGY", lock: false, visible: true }), k, `наша энергия ${need} -> W2 (${sun / 1e6} TRX стейка)`);
   const green = await tok(w2, token, me, 5_000_000n, "W2 перевод с нашей энергией");
   await send(await post("/wallet/undelegateresource", { owner_address: me, receiver_address: a2, balance: sun, resource: "ENERGY", visible: true }), k, "возврат энергии");
@@ -149,7 +169,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const main = async () => {
     if (cmd === "init") return init();
     if (cmd === "check") return lockOrDie(x ?? tokenAddr());
-    if (cmd === "run") return run();
+    if (cmd === "run") { RUN = true; return run(); }
     if (cmd === "give" && x && y) {
       if (!/^T[1-9A-HJ-NP-Za-km-z]{33}$/.test(x) || !(Number(y) > 0 && Number(y) <= 300)) throw new Error("адрес T... и сумма 0..300");
       const t = tokenAddr(); await lockOrDie(t);
@@ -162,5 +182,5 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     }
     console.log("команды: init | check [ТОКЕН] | give АДРЕС СУММА | send КЛЮЧ-ФАЙЛ АДРЕС СУММА | run"); process.exit(2);
   };
-  main().catch((e) => { log(`ОШИБКА: ${e?.message ?? e}`); process.exit(2); });
+  main().catch((e) => { const m = `ОШИБКА: ${e?.message ?? e}`; log(m); lastRed(m); if (RUN) log("ДЭ-2 робот: КРАСНОЕ (ошибка прогона)"); process.exit(2); });
 }
