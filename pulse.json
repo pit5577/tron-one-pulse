@@ -66,6 +66,18 @@
    "последняя": "2026-11-21T23:16+0300",
    "тревога_после": "2026-11-21T23:56+0300",
    "ссылка": ""
+  },
+  {
+   "ид": "6.1",
+   "последняя": "2026-11-21T23:27+0300",
+   "тревога_после": "2026-11-22T00:07+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtTZ5hBBF9bRWeL44VwJPPfd"
+  },
+  {
+   "ид": "ДП-1",
+   "последняя": "2026-11-21T23:27+0300",
+   "тревога_после": "2026-11-22T00:07+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtR4n4oighmdnS8S519VfbW7"
   }
  ],
  "старт": "2026-12-10",
