@@ -8,16 +8,16 @@
  "повтор_минут": 120,
  "шаги": [
   {
+   "ид": "5.1",
+   "последняя": "2026-11-21T08:33+0300",
+   "тревога_после": "2026-11-21T09:13+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtMZr7sKi6f35moko3edVmfC"
+  },
+  {
    "ид": "5.4",
    "последняя": "2026-11-21T09:23+0300",
    "тревога_после": "2026-11-21T10:33+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtHSQYRaZKhBAm3d1tE6NCkC"
-  },
-  {
-   "ид": "3.3",
-   "последняя": "2026-11-22T18:46+0300",
-   "тревога_после": "2026-11-22T19:26+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtU3ATBvNXxqRSsEXPKdMzNx"
   },
   {
    "ид": "4.3",
@@ -44,10 +44,10 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtT6c6wuQN6wDkG35eNnRxxr"
   },
   {
-   "ид": "5.1",
+   "ид": "3.3",
    "последняя": "2026-11-22T18:53+0300",
    "тревога_после": "2026-11-22T19:33+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtMZr7sKi6f35moko3edVmfC"
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtU3ATBvNXxqRSsEXPKdMzNx"
   }
  ],
  "старт": "2026-12-10",
