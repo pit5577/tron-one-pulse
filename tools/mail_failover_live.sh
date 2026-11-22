@@ -62,7 +62,11 @@ check)
   R="$(prod "bash -s" <<REMOTE
 E="$PENV"; v=\$(grep '^RESEND_API_KEY=' "\$E" | tail -1 | cut -d= -f2- | tr -d '\n')
 echo "env=\${v:+<sha \$(printf %s "\$v" | sha256sum | cut -c1-8)>}"
-pid=\$(systemctl show $U -p MainPID --value); echo "live=\$(sudo cat /proc/\$pid/environ 2>/dev/null | tr '\0' '\n' | grep -c '^RESEND_API_KEY=.')"
+pid=\$(systemctl show $U -p MainPID --value); n=\$(sudo cat /proc/\$pid/environ 2>/dev/null | tr '\0' '\n' | grep -c '^RESEND_API_KEY=.')
+# 22.11 замок: Джарвис читает ключи через node --env-file - в environ их нет. Тогда: ключ в этом файле и процесс стартовал позже файла
+if [ "\$n" = 0 ]; then f=\$(sudo cat /proc/\$pid/cmdline 2>/dev/null | tr '\0' '\n' | sed -n 's/^--env-file=//p' | head -1)
+  if [ -n "\$f" ] && sudo grep -q '^RESEND_API_KEY=.' "\$f" && [ "\$(stat -c %Y /proc/\$pid)" -ge "\$(sudo stat -c %Y "\$f")" ]; then n=1; fi; fi
+echo "live=\$n"
 echo "code=\$(grep -c 'e.reason === \"silenced\"' ~/tron-one-backend/src/auth/mailer.ts 2>/dev/null)"
 echo "silence=\$(grep -A12 '\"api.postmarkapp.com\"' ~/tron-one-backend/src/net/egress_budget.json 2>/dev/null | grep -o '\"silence_s\": [0-9]*' | grep -o '[0-9]*$')"
 REMOTE
