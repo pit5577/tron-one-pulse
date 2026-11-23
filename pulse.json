@@ -8,12 +8,6 @@
  "повтор_минут": 120,
  "шаги": [
   {
-   "ид": "И-4",
-   "последняя": "2026-11-23T20:45+0300",
-   "тревога_после": "2026-11-23T21:25+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt5DCKrRLhJxd2Fn9YA2vhqf"
-  },
-  {
    "ид": "НГ-3",
    "последняя": "2026-11-23T20:45+0300",
    "тревога_после": "2026-11-23T21:25+0300",
@@ -27,6 +21,12 @@
   },
   {
    "ид": "СА-1",
+   "последняя": "2026-11-23T20:46+0300",
+   "тревога_после": "2026-11-23T22:26+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt5DCKrRLhJxd2Fn9YA2vhqf"
+  },
+  {
+   "ид": "И-4",
    "последняя": "2026-11-23T20:46+0300",
    "тревога_после": "2026-11-23T22:26+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt5DCKrRLhJxd2Fn9YA2vhqf"
