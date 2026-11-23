@@ -1,20 +1,21 @@
-RED|КРАСНОЕ: шаг 5, no_bandwidth: цена не появилась за 30 с (кнопка «Повторить»); ответ /quote: 200 {"ok":true,"nothingToCharge":false,"needs":{"energy":{"toDeliver":17579},"bandwidth":{"toDeliver":351}},"usage":{"day":"2026-11-23","charges
-Nile: докинь TRX на кошелек робота T…pTsc (сейчас 17.26 TRX)
-Профиль «как Иван» (только TRX): RED|КРАСНОЕ: шаг 5, no_bandwidth: цена не появилась за 30 с (кнопка «Повторить»); ответ /quote: 200 {"ok":true,"nothingToCharge":false,"needs":{"energy":{"toDeliver":17579},"bandwidth":{"toDeliver":351}},"usage":{"day":"2026-11-23","charges
-Профиль «с USDT»: RED|КРАСНОЕ: шаг 5, no_bandwidth: цена не появилась за 30 с (кнопка «Повторить»); ответ /quote: 200 {"ok":true,"nothingToCharge":false,"needs":{"energy":{"toDeliver":17580},"bandwidth":{"toDeliver":351}},"usage":{"day":"2026-11-23","charges
-OK  chromium/trx 1 открыть страницу: холодный старт 90 мс; сборка на странице 08233842008413; ожидали 08233842008413; service worker: ready; после перезагрузки сборка 08233842008413
-OK  chromium/trx 2 вход: вход по robot+20261122@tronone.io за 4028 мс
-OK  chromium/trx 3 пополнение: адрес пополнения T…Xq8f; перевод 5 TRX edc160bcb7581aec5c810bc284fd26b250a8f90775de3588f45495f1ddb0d935 SUCCESS; баланс до 38, после 43; зачислено за 105 с
-OK  chromium/trx 4 баланс: на экранах {"кнопка":43,"окно пополнения":43}; ожидали 43
-RED chromium/trx 5 зарядка: no_bandwidth: цена не появилась за 30 с (кнопка «Повторить»); ответ /quote: 200 {"ok":true,"nothingToCharge":false,"needs":{"energy":{"toDeliver":17579},"bandwidth":{"toDeliver":351}},"usage":{"day":"2026-11-23","charges":3,"spentSun":944704},"plan":{"ok":false,"reason":"no_bandwidth","detail":"band; экран: Tron One ОТКУДА Мой кошелек TGXZ..qyFu На кошельке нет настоящих USDT › КУДА TFgf..kFVS..VvK7 сохраняю… × Как назвать этот адрес? Можно пропустить. + Новый адрес Сервер пока не отвечает. Адреса сохраню сам, как только он вернется, - ни
-OK  chromium/trx 7 языки: ru/en/zh, баланс {"ru":43,"en":43,"zh":43}, кириллицы в en/zh нет
-OK  chromium/usdt 1 открыть страницу: холодный старт 70 мс; сборка на странице 08233842008413; ожидали 08233842008413; service worker: ready; после перезагрузки сборка 08233842008413
-OK  chromium/usdt 2 вход: вход по robot+20261122-usdt@tronone.io за 2033 мс
-OK  chromium/usdt 3 пополнение: адрес пополнения T…JRNj; перевод 5 TRX c5baa54e4e5371521815c9f9418322618a72d10a2d4f0879c7998a18f38c31a1 SUCCESS; баланс до 21.9, после 26.9; зачислено за 75 с
-OK  chromium/usdt 4 баланс: на экранах {"кнопка":26.9,"окно пополнения":26.9}; ожидали 26.9
-RED chromium/usdt 5 зарядка: no_bandwidth: цена не появилась за 30 с (кнопка «Повторить»); ответ /quote: 200 {"ok":true,"nothingToCharge":false,"needs":{"energy":{"toDeliver":17580},"bandwidth":{"toDeliver":351}},"usage":{"day":"2026-11-23","charges":3,"spentSun":944704},"plan":{"ok":false,"reason":"no_bandwidth","detail":"band; экран: Tron One ОТКУДА Мой кошелек TWMb..pTsc Адрес чистый · 23.11 › КУДА TFgf..kFVS..VvK7 сохраняю… × Как назвать этот адрес? Можно пропустить. + Новый адрес Сервер пока не отвечает. Адреса сохраню сам, как только он вернется, - ничего не пр
-OK  webkit/trx 1 открыть страницу: холодный старт 158 мс; сборка на странице 08233842008413; ожидали 08233842008413; service worker: ready; после перезагрузки сборка 08233842008413
-RED webkit/trx 2 вход: «Получить код»: сервер ответил 429 {"ok":false,"reason":"rate_limited","detail":"на этот email уже ушло 3 письма за час - проверь «Спам» или попробуй позже","params":{"retryAfterSec":1852}}
+RED|КРАСНОЕ: шаг 5, исключение: locator.check: Clicking the checkbox did not change its state
+Nile: докинь TRX на кошелек робота T…pTsc (сейчас 11.16 TRX)
+Профиль «как Иван» (только TRX): RED|КРАСНОЕ: шаг 5, исключение: locator.check: Clicking the checkbox did not change its state
+Профиль «с USDT»: RED|КРАСНОЕ: шаг 5, исключение: locator.check: Clicking the checkbox did not change its state
+OK  chromium/trx 1 открыть страницу: холодный старт 85 мс; сборка на странице 06482644600035; ожидали 06482644600035; service worker: ready; после перезагрузки сборка 06482644600035
+OK  chromium/trx 2 вход: вход по robot+20261123@tronone.io за 3827 мс
+OK  chromium/trx 3 пополнение: адрес пополнения T…ZfJw; перевод 5 TRX b3e0fc3443355089c7e9d6eff6a2857d85cb374560454010b10cac25cee73c0f SUCCESS; баланс до 0, после 5; зачислено за 105 с
+OK  chromium/trx 4 баланс: на экранах {"кнопка":5,"окно пополнения":5}; ожидали 5
+RED chromium/trx 5 робот: исключение: locator.check: Clicking the checkbox did not change its state
+OK  chromium/usdt 1 открыть страницу: холодный старт 75 мс; сборка на странице 06482644600035; ожидали 06482644600035; service worker: ready; после перезагрузки сборка 06482644600035
+OK  chromium/usdt 2 вход: вход по robot+20261123-usdt@tronone.io за 6156 мс
+OK  chromium/usdt 3 пополнение: адрес пополнения T…jPRp; перевод 5 TRX cea1ccc13f3a482e859cb3424b07ae6eb4de7d9f272fe446ba08d6aad546c52c SUCCESS; баланс до 0, после 5; зачислено за 105 с
+OK  chromium/usdt 4 баланс: на экранах {"кнопка":5,"окно пополнения":5}; ожидали 5
+RED chromium/usdt 5 робот: исключение: locator.check: Clicking the checkbox did not change its state
+OK  webkit/trx 1 открыть страницу: холодный старт 150 мс; сборка на странице 06482644600035; ожидали 06482644600035; service worker: ready; после перезагрузки сборка 06482644600035
+OK  webkit/trx 2 вход: вход по robot+20261123@tronone.io за 3169 мс
+OK  webkit/trx 4 баланс: на экранах {"кнопка":5,"окно пополнения":5}; ожидали (не проверяем)
+OK  webkit/trx 7 языки: ru/en/zh, баланс {"ru":5,"en":5,"zh":5}, кириллицы в en/zh нет
 потрачено TRX всего: 10; потолок на профиль: 10
-отчет: /Users/ivan/tron-one/build/sandbox_robot/runs/20261122T233047Z
-sandbox RELEASE prefix=prod-20261123-0204 dev=4188fe579dcf28982f874bc0234777679c8de9a5; страница сборки 08233842008413
+отчет: /Users/ivan/tron-one/build/sandbox_robot/runs/20261123T004228Z
+sandbox RELEASE prefix=prod-20261123-0300 dev=d76be0a032e4833ef28b0ef551f9af30229e1f0a; страница сборки 06482644600035
