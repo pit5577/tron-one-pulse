@@ -20,28 +20,28 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtYCo8BD7XQyrwUrseRotG8k"
   },
   {
-   "ид": "Б-1",
-   "последняя": "2026-11-23T21:06+0300",
-   "тревога_после": "2026-11-23T21:46+0300",
-   "ссылка": ""
-  },
-  {
    "ид": "С-28",
    "последняя": "2026-11-23T21:07+0300",
    "тревога_после": "2026-11-23T21:47+0300",
    "ссылка": ""
   },
   {
-   "ид": "С-27",
-   "последняя": "2026-11-23T21:14+0300",
-   "тревога_после": "2026-11-23T21:54+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVVmuAuPMav3PPTntVgBc6F"
+   "ид": "Б-1",
+   "последняя": "2026-11-23T21:15+0300",
+   "тревога_после": "2026-11-23T21:55+0300",
+   "ссылка": ""
   },
   {
    "ид": "И-4",
    "последняя": "2026-11-23T21:15+0300",
    "тревога_после": "2026-11-23T22:25+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt5DCKrRLhJxd2Fn9YA2vhqf"
+  },
+  {
+   "ид": "С-27",
+   "последняя": "2026-11-23T21:15+0300",
+   "тревога_после": "2026-11-23T21:55+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVVmuAuPMav3PPTntVgBc6F"
   }
  ],
  "старт": "2026-12-10",
