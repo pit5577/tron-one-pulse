@@ -20,22 +20,16 @@
    "ссылка": ""
   },
   {
-   "ид": "TG-1",
-   "последняя": "2026-11-24T01:39+0300",
-   "тревога_после": "2026-11-24T02:49+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtPGv5zi3oSBvxbb3NeGAGRV"
-  },
-  {
    "ид": "5.1",
    "последняя": "2026-11-24T01:41+0300",
    "тревога_после": "2026-11-24T02:21+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt9WVzJhYXMC5b9M17ymAcBM"
   },
   {
-   "ид": "С-15",
+   "ид": "TG-1",
    "последняя": "2026-11-24T01:43+0300",
-   "тревога_после": "2026-11-24T02:23+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVSkJAyN7tLi37D7LjtSkY7"
+   "тревога_после": "2026-11-24T03:53+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtPGv5zi3oSBvxbb3NeGAGRV"
   }
  ],
  "старт": "2026-12-10",
@@ -56,15 +50,15 @@
   "2026-11-24": 1,
   "2026-11-23": 12
  },
- "готово_pct": 29.5,
+ "готово_pct": 29.6,
  "прогноз": "2026-12-18",
  "сегодня": [
   "Пул исполнителей: Мак молчит - прогоны берет сервер, оба в…",
-  "Тексты доверия на трех языках",
   "Запас против потолка TronGrid",
+  "Тексты доверия на трех языках",
   "Тесты сервера в GitHub вместо Мака",
-  "Перевод без сжигания TRX с любого кошелька: полосу дает наш…",
   "Включение: канон в правилах проекта, утро и счет расхода…",
+  "Вернуть ли сторожа сети на Мак",
   "Службы и чистка",
   "Доли ключа TronGrid, клиент первым",
   "Прозрачный прокси",
