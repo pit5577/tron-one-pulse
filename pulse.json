@@ -1,5 +1,5 @@
 {
- "t": "2026-11-23T21:03+0300",
+ "t": "2026-11-23T21:04+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -26,16 +26,16 @@
    "ссылка": ""
   },
   {
-   "ид": "С-27",
-   "последняя": "2026-11-23T21:01+0300",
-   "тревога_после": "2026-11-23T21:41+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt5gJUU9v3xtq3SnSQzneUda"
-  },
-  {
    "ид": "С-26",
    "последняя": "2026-11-23T21:03+0300",
    "тревога_после": "2026-11-23T21:43+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVLJMWi7mJaMBnN83Wnkz4s"
+  },
+  {
+   "ид": "С-27",
+   "последняя": "2026-11-23T21:04+0300",
+   "тревога_после": "2026-11-23T21:44+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt5gJUU9v3xtq3SnSQzneUda"
   }
  ],
  "старт": "2026-12-10",
@@ -60,7 +60,7 @@
   "2026-11-23": 8,
   "2026-11-22": 7
  },
- "готово_pct": 26.0,
+ "готово_pct": 26.1,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Пул исполнителей: Мак молчит - прогоны берет сервер, оба в…",
