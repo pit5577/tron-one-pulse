@@ -1,5 +1,5 @@
 {
- "t": "2026-11-24T04:28+0300",
+ "t": "2026-11-24T04:29+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -14,16 +14,16 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtJf1afNojnK7zWFi28qNfJk"
   },
   {
-   "ид": "Ж-1",
-   "последняя": "2026-11-24T04:20+0300",
-   "тревога_после": "2026-11-24T05:00+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFQ5qfTWAh5gi4ZSJtM7s7R"
-  },
-  {
    "ид": "КЗ-1",
    "последняя": "2026-11-24T04:28+0300",
    "тревога_после": "2026-11-24T05:38+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtMA99rMoKp5JbxQsWK58bsg"
+  },
+  {
+   "ид": "Ж-1",
+   "последняя": "2026-11-24T04:29+0300",
+   "тревога_после": "2026-11-24T05:09+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFQ5qfTWAh5gi4ZSJtM7s7R"
   }
  ],
  "старт": "2026-12-10",
@@ -45,11 +45,11 @@
   "2026-11-24": 2,
   "2026-11-23": 12
  },
- "готово_pct": 30.6,
+ "готово_pct": 30.9,
  "прогноз": "2026-12-18",
  "сегодня": [
-  "Пул исполнителей: Мак молчит - прогоны берет сервер, оба в…",
   "Тесты сервера в GitHub вместо Мака",
+  "Пул исполнителей: Мак молчит - прогоны берет сервер, оба в…",
   "Аллокатор и казначейство: поставщики не пустеют сами",
   "Включение: канон в правилах проекта, утро и счет расхода…",
   "Вернуть ли сторожа сети на Мак",
