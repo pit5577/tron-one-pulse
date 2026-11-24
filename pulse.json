@@ -1,5 +1,5 @@
 {
- "t": "2026-11-24T13:23+0300",
+ "t": "2026-11-24T13:25+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -20,16 +20,16 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtKfGeiy6j7YHVk3Mmpab9R9"
   },
   {
-   "ид": "НГ-4",
-   "последняя": "2026-11-24T13:19+0300",
-   "тревога_после": "2026-11-24T13:59+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt1gaPQ4GkyWRnqX8ZK9RWSZ"
-  },
-  {
    "ид": "ИП-1",
    "последняя": "2026-11-24T13:23+0300",
    "тревога_после": "2026-11-24T14:03+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt4pWvL9ieGxL48EvTY1MC8Q"
+  },
+  {
+   "ид": "НГ-4",
+   "последняя": "2026-11-24T13:25+0300",
+   "тревога_после": "2026-11-24T14:05+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt1gaPQ4GkyWRnqX8ZK9RWSZ"
   }
  ],
  "старт": "2026-12-10",
@@ -54,12 +54,12 @@
   "2026-11-24": 8,
   "2026-11-23": 12
  },
- "готово_pct": 36.2,
+ "готово_pct": 36.3,
  "прогноз": "2026-12-18",
  "сегодня": [
   "Прозрачный прокси",
-  "Бюджет легкости в воротах страницы: рост нажатий, кнопок и…",
   "Учение: Мак выключен, правка доходит до боя",
+  "Бюджет легкости в воротах страницы: рост нажатий, кнопок и…",
   "Включение: канон в правилах проекта, утро и счет расхода…",
   "Вернуть ли сторожа сети на Мак",
   "Двойник-молчун и проба «убей и подними» для денежных тестов",
