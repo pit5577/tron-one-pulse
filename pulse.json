@@ -14,6 +14,12 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtJf1afNojnK7zWFi28qNfJk"
   },
   {
+   "ид": "Д-1",
+   "последняя": "2026-11-24T04:20+0300",
+   "тревога_после": "2026-11-24T05:00+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtLxSfkTsPoFsrjJcN1gPgC8"
+  },
+  {
    "ид": "Ж-1",
    "последняя": "2026-11-24T04:20+0300",
    "тревога_после": "2026-11-24T05:00+0300",
@@ -26,10 +32,10 @@
    "ссылка": ""
   },
   {
-   "ид": "Д-1",
+   "ид": "КЗ-1",
    "последняя": "2026-11-24T04:22+0300",
    "тревога_после": "2026-11-24T05:02+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtLxSfkTsPoFsrjJcN1gPgC8"
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtMA99rMoKp5JbxQsWK58bsg"
   }
  ],
  "старт": "2026-12-10",
@@ -50,15 +56,15 @@
   "2026-11-24": 1,
   "2026-11-23": 12
  },
- "готово_pct": 30.2,
+ "готово_pct": 29.8,
  "прогноз": "2026-12-18",
  "сегодня": [
   "Пополнение своими USDT с пустого кошелька",
   "Пул исполнителей: Мак молчит - прогоны берет сервер, оба в…",
-  "Доли ключа TronGrid, клиент первым",
   "Тесты сервера в GitHub вместо Мака",
   "Включение: канон в правилах проекта, утро и счет расхода…",
-  "Вернуть ли сторожа сети на Мак",
+  "Аллокатор и казначейство: поставщики не пустеют сами",
+  "Доли ключа TronGrid, клиент первым",
   "Службы и чистка",
   "Прозрачный прокси",
   "Карточка Ивану: пять действий по 5-15 минут",
