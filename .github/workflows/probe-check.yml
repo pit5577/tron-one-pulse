@@ -1,0 +1,16 @@
+name: проба проверки
+on:
+  push:
+    branches: [claude/project-thread-ldl108]
+permissions:
+  checks: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - run: |
+          gh api -X POST repos/${{ github.repository }}/check-runs -f name="класс правки" -f head_sha=${{ github.sha }} \
+            -f status=completed -f conclusion=action_required -f "output[title]=класс: денежная, ждет подписи" -f "output[summary]=проба"
