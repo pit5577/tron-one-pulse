@@ -1,0 +1,37 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Привратник Tron One</title>
+<style>
+:root{--bg:#f6f7f9;--fg:#15181d;--muted:#5b6470;--accent:#1f6feb;--card:#fff;--line:#d9dee5}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1216;--fg:#e8ebef;--muted:#9aa4b1;--accent:#4c8dff;--card:#171b21;--line:#2a313a}}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.5 -apple-system,system-ui,sans-serif}
+main{max-width:520px;margin:0 auto;padding:32px max(16px,env(safe-area-inset-left)) 48px}
+h1{font-size:24px;margin:0 0 8px}p{color:var(--muted);margin:0 0 20px}
+button,a.btn{display:block;width:100%;box-sizing:border-box;padding:18px;border:0;border-radius:12px;background:var(--accent);color:#fff;font-size:19px;font-weight:600;text-align:center;text-decoration:none}
+.ok{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:16px}
+</style></head><body><main>
+<div id="start">
+<h1>Создать привратник</h1>
+<p>Одна кнопка. На странице GitHub нажмите зеленую кнопку «Create GitHub App for pit5577».</p>
+<form id="f" method="post" action="https://github.com/settings/apps/new">
+<input type="hidden" name="manifest" id="manifest">
+<button type="submit">Создать приложение tronone-gate</button>
+</form>
+</div>
+<div id="back" hidden>
+<h1>Приложение создано</h1>
+<p>Сейчас откроется форма GitHub. Нажмите в ней зеленую кнопку «Create».</p>
+<a class="btn" id="issue" href="#">Передать код в GitHub</a>
+<div class="ok">Код одноразовый, действует час. Ключ приложения вы не видите и не копируете.</div>
+</div>
+<script>
+var M={"name": "tronone-gate", "url": "https://github.com/pit5577/tron-one", "description": "Привратник Tron One: ставит обязательные проверки «класс правки» и «owner-guard»; ключ только в окружении gate ствола.", "hook_attributes": {"url": "https://github.com/pit5577/tron-one", "active": false}, "redirect_url": "https://pit5577.github.io/tron-one-pulse/gate/", "public": false, "default_permissions": {"metadata": "read", "contents": "read", "pull_requests": "read", "checks": "write", "administration": "write", "environments": "write", "secrets": "write"}, "default_events": []};
+document.getElementById("manifest").value=JSON.stringify(M);
+var q=new URLSearchParams(location.search),c=q.get("code");
+if(c&&/^[A-Za-z0-9_-]{10,100}$/.test(c)){
+ document.getElementById("start").hidden=true;document.getElementById("back").hidden=false;
+ var body="Код привратника (одноразовый): "+c+"\n\nДальше установите приложение: https://github.com/apps/tronone-gate/installations/new";
+ var u="https://github.com/pit5577/tron-one/issues/new?title="+encodeURIComponent("tronone-gate: код")+"&body="+encodeURIComponent(body);
+ document.getElementById("issue").href=u;location.replace(u);
+}
+</script>
+</main></body></html>
