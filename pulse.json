@@ -26,6 +26,12 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtJPHUT735f6rz7iZqECMZUL"
   },
   {
+   "ид": "ИС-3.5",
+   "последняя": "2026-11-25T23:31+0300",
+   "тревога_после": "2026-11-26T00:11+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtTJrGEsjdRqP8Mkt5uGfiTH"
+  },
+  {
    "ид": "ИС-5.6",
    "последняя": "2026-11-25T23:33+0300",
    "тревога_после": "2026-11-26T00:13+0300",
@@ -48,12 +54,6 @@
    "последняя": "2026-11-25T23:37+0300",
    "тревога_после": "2026-11-26T00:17+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtE71TZaSBPWGjnFPFrA9cPv"
-  },
-  {
-   "ид": "ИС-3.5",
-   "последняя": "2026-11-25T23:39+0300",
-   "тревога_после": "2026-11-26T00:19+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtTJrGEsjdRqP8Mkt5uGfiTH"
   }
  ],
  "срочно": [],
@@ -73,7 +73,7 @@
   "2026-11-25": 35,
   "2026-11-24": 0
  },
- "готово_pct": 50.7,
+ "готово_pct": 50.4,
  "сегодня": [
   "Страница ваших рычагов: подпись, стоп, откат, вход без…",
   "Обычные правки сливаются сами, денежные - одной подписью за…",
