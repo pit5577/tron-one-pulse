@@ -20,12 +20,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtRgMqgiWXBNuoS2n6TAEEPd"
   },
   {
-   "ид": "ИС-0.1С",
-   "последняя": "2026-11-25T17:30+0300",
-   "тревога_после": "2026-11-25T18:10+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVcVrD6EgnzcyftSRzBB6k1"
-  },
-  {
    "ид": "ИС-1.7",
    "последняя": "2026-11-25T17:32+0300",
    "тревога_после": "2026-11-25T18:12+0300",
@@ -59,7 +53,6 @@
  "сегодня": [
   "Страница рычагов Ивана в карте",
   "Обычная правка сливается сама",
-  "Проверить, что сервер песочницы встает с нуля одной командой",
   "Копии боя в Backblaze и учение восстановления",
   "Учебная цепь TRON и дублеры поставщиков",
   "Выпускной экзамен среды: ворота «среда готова»",
