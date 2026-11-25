@@ -20,16 +20,16 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtQdh2JHgh2EhNPFuivsEuo5"
   },
   {
-   "ид": "ИС-0.1Т",
-   "последняя": "2026-11-25T16:26+0300",
-   "тревога_после": "2026-11-25T17:06+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtHjMa1gmpTY9RiyK47gDbFB"
-  },
-  {
    "ид": "ИС-0.1Г",
    "последняя": "2026-11-25T16:28+0300",
    "тревога_после": "2026-11-25T17:08+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtKhfBHGoundUTZLRq4CrQsc"
+  },
+  {
+   "ид": "ИС-0.1Т",
+   "последняя": "2026-11-25T16:37+0300",
+   "тревога_после": "2026-11-25T17:17+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtHjMa1gmpTY9RiyK47gDbFB"
   }
  ],
  "срочно": [],
@@ -49,7 +49,7 @@
   "2026-11-25": 19,
   "2026-11-24": 0
  },
- "готово_pct": 5.9,
+ "готово_pct": 8.8,
  "сегодня": [
   "Проверка, что пуши и автопилот работают",
   "Песочница и базы на UpCloud",
