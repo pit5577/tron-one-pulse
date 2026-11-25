@@ -27,9 +27,15 @@
   },
   {
    "ид": "ИС-Д8",
+   "последняя": "2026-11-25T12:08+0300",
+   "тревога_после": "2026-11-25T12:48+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtQdh2JHgh2EhNPFuivsEuo5"
+  },
+  {
+   "ид": "ИС-У11",
    "последняя": "2026-11-25T12:44+0300",
    "тревога_после": "2026-11-25T13:24+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtQdh2JHgh2EhNPFuivsEuo5"
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtBS9LhZkgDWP1qtRKeCxN94"
   }
  ],
  "срочно": [],
