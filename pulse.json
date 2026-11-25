@@ -1,5 +1,5 @@
 {
- "t": "2026-11-25T16:58+0300",
+ "t": "2026-11-25T17:03+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -18,6 +18,12 @@
    "последняя": "2026-11-25T16:56+0300",
    "тревога_после": "2026-11-25T17:36+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtTvJ5U9zJLc8StySxTKZ1Jj"
+  },
+  {
+   "ид": "ИС-1.9",
+   "последняя": "2026-11-25T17:03+0300",
+   "тревога_после": "2026-11-25T17:43+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt7FNKoeMJHnG6GZEMpZQgAd"
   }
  ],
  "срочно": [],
@@ -40,6 +46,7 @@
  "готово_pct": 12.4,
  "сегодня": [
   "Песочница и базы на UpCloud",
+  "Готовая одинаковая среда для веток (devcontainer)",
   "Учебная цепь TRON и дублеры поставщиков",
   "Чертеж платформы и план переезда",
   "Карта среды и четыре линзы аудита",
