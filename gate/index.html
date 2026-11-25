@@ -24,7 +24,7 @@ button,a.btn{display:block;width:100%;box-sizing:border-box;padding:18px;border:
 <div class="ok">Код одноразовый, действует час. Ключ приложения вы не видите и не копируете.</div>
 </div>
 <script>
-var M={"name": "tronone-gate", "url": "https://github.com/pit5577/tron-one", "description": "Привратник Tron One: ставит обязательные проверки «класс правки» и «owner-guard»; ключ только в окружении gate ствола.", "hook_attributes": {"url": "https://github.com/pit5577/tron-one", "active": false}, "redirect_url": "https://pit5577.github.io/tron-one-pulse/gate/", "public": false, "default_permissions": {"metadata": "read", "contents": "read", "pull_requests": "read", "checks": "write", "administration": "write", "environments": "write", "secrets": "write"}, "default_events": []};
+var M={"name": "tronone-gate", "url": "https://github.com/pit5577/tron-one", "description": "Привратник Tron One: ставит обязательные проверки «класс правки» и «owner-guard»; ключ только в окружении gate ствола.", "hook_attributes": {"url": "https://github.com/pit5577/tron-one", "active": false}, "redirect_url": "https://pit5577.github.io/tron-one-pulse/gate/", "public": false, "default_permissions": {"metadata": "read", "contents": "write", "pull_requests": "write", "checks": "write", "administration": "write", "environments": "write", "secrets": "write"}, "default_events": []};
 document.getElementById("manifest").value=JSON.stringify(M);
 var q=new URLSearchParams(location.search),c=q.get("code");
 if(c&&/^[A-Za-z0-9_-]{10,100}$/.test(c)){
