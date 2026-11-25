@@ -24,6 +24,12 @@
    "последняя": "2026-11-25T17:14+0300",
    "тревога_после": "2026-11-25T17:54+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtXTm385pRh7xjzQdhQqi7Ti"
+  },
+  {
+   "ид": "ИС-0.1С",
+   "последняя": "2026-11-25T17:14+0300",
+   "тревога_после": "2026-11-25T17:54+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVcVrD6EgnzcyftSRzBB6k1"
   }
  ],
  "срочно": [],
@@ -47,6 +53,7 @@
  "сегодня": [
   "Чертеж платформы и план переезда",
   "Готовая одинаковая среда для веток (devcontainer)",
+  "Пробы серверов: приемщик Kamal и песочница с нуля",
   "Учебная цепь TRON и дублеры поставщиков",
   "Карта среды и четыре линзы аудита",
   "Страница рычагов Ивана в карте",
