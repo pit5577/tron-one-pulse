@@ -1,5 +1,5 @@
 {
- "t": "2026-11-26T00:50+0300",
+ "t": "2026-11-26T00:55+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -26,12 +26,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtJPHUT735f6rz7iZqECMZUL"
   },
   {
-   "ид": "ИС-1.7",
-   "последняя": "2026-11-26T00:19+0300",
-   "тревога_после": "2026-11-26T00:59+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFNFgDdGUKqTzDKjvo7PD5y"
-  },
-  {
    "ид": "ИС-5.3Н",
    "последняя": "2026-11-26T00:49+0300",
    "тревога_после": "2026-11-26T01:29+0300",
@@ -42,6 +36,12 @@
    "последняя": "2026-11-26T00:49+0300",
    "тревога_после": "2026-11-26T01:29+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtLLWsBWVDyzWPoc4HQSKpBo"
+  },
+  {
+   "ид": "ИС-1.7",
+   "последняя": "2026-11-26T00:55+0300",
+   "тревога_после": "2026-11-26T01:35+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFNFgDdGUKqTzDKjvo7PD5y"
   }
  ],
  "срочно": [],
