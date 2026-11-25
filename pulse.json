@@ -30,12 +30,6 @@
    "последняя": "2026-11-25T19:13+0300",
    "тревога_после": "2026-11-25T19:53+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt6sozcS3YhkcFC31cLF8kNE"
-  },
-  {
-   "ид": "ИС-1.7",
-   "последняя": "2026-11-25T20:37+0300",
-   "тревога_после": "2026-11-25T21:17+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFNFgDdGUKqTzDKjvo7PD5y"
   }
  ],
  "срочно": [],
@@ -58,7 +52,6 @@
  "готово_pct": 42.4,
  "сегодня": [
   "Страница ваших рычагов: подпись, стоп, откат, вход без…",
-  "Обычные правки сливаются сами, денежные - одной подписью за…",
   "Claude берет задачу-карточку сам в GitHub",
   "Песочница с нуля одной командой",
   "Роли базы: витрина не пишет в книгу денег",
