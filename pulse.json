@@ -1,5 +1,5 @@
 {
- "t": "2026-11-25T17:03+0300",
+ "t": "2026-11-25T17:09+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -14,16 +14,16 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtQdh2JHgh2EhNPFuivsEuo5"
   },
   {
-   "ид": "ИС-3.2",
-   "последняя": "2026-11-25T16:56+0300",
-   "тревога_после": "2026-11-25T17:36+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtTvJ5U9zJLc8StySxTKZ1Jj"
-  },
-  {
    "ид": "ИС-1.9",
    "последняя": "2026-11-25T17:03+0300",
    "тревога_после": "2026-11-25T17:43+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt7FNKoeMJHnG6GZEMpZQgAd"
+  },
+  {
+   "ид": "ИС-3.2",
+   "последняя": "2026-11-25T17:09+0300",
+   "тревога_после": "2026-11-25T17:49+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtTvJ5U9zJLc8StySxTKZ1Jj"
   }
  ],
  "срочно": [],
@@ -43,7 +43,7 @@
   "2026-11-25": 22,
   "2026-11-24": 0
  },
- "готово_pct": 12.4,
+ "готово_pct": 13.3,
  "сегодня": [
   "Песочница и базы на UpCloud",
   "Готовая одинаковая среда для веток (devcontainer)",
