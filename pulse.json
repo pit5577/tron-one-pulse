@@ -24,12 +24,6 @@
    "последняя": "2026-11-25T17:11+0300",
    "тревога_после": "2026-11-25T17:51+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt7FNKoeMJHnG6GZEMpZQgAd"
-  },
-  {
-   "ид": "ИС-Д8",
-   "последняя": "2026-11-25T17:13+0300",
-   "тревога_после": "2026-11-25T17:53+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtQdh2JHgh2EhNPFuivsEuo5"
   }
  ],
  "срочно": [],
@@ -46,12 +40,11 @@
   "2026-11-24": []
  },
  "сделано_всего": {
-  "2026-11-25": 22,
+  "2026-11-25": 23,
   "2026-11-24": 0
  },
- "готово_pct": 14.2,
+ "готово_pct": 14.3,
  "сегодня": [
-  "Песочница и базы на UpCloud",
   "Чертеж платформы и план переезда",
   "Готовая одинаковая среда для веток (devcontainer)",
   "Учебная цепь TRON и дублеры поставщиков",
