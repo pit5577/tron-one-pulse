@@ -1,5 +1,5 @@
 {
- "t": "2026-11-25T16:47+0300",
+ "t": "2026-11-25T16:48+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -24,6 +24,12 @@
    "последняя": "2026-11-25T16:45+0300",
    "тревога_после": "2026-11-25T17:25+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtTvJ5U9zJLc8StySxTKZ1Jj"
+  },
+  {
+   "ид": "ИС-У13",
+   "последняя": "2026-11-25T16:48+0300",
+   "тревога_после": "2026-11-25T17:28+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtC4drpzAbNS2kJKLXcjwneh"
   }
  ],
  "срочно": [],
@@ -45,6 +51,7 @@
  },
  "готово_pct": 10.3,
  "сегодня": [
+  "Проверка, что пуши и автопилот работают",
   "Песочница и базы на UpCloud",
   "Пробы GitHub: подделка и доля обычных правок",
   "Учебная цепь TRON и дублеры поставщиков",
