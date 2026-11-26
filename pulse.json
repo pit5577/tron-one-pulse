@@ -74,18 +74,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt7RNs1M5et1LTmRfmKLmo5e"
   },
   {
-   "ид": "ИС-1.8",
-   "последняя": "2026-11-27T01:43+0300",
-   "тревога_после": "2026-11-27T02:23+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt4U4XUQaCJKUKxvhg3EQxtT"
-  },
-  {
-   "ид": "ЗЧ-1",
-   "последняя": "2026-11-27T01:44+0300",
-   "тревога_после": "2026-11-27T02:24+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVm4vC7115AzsJ6QQccGcJE"
-  },
-  {
    "ид": "ИС-7.3",
    "последняя": "2026-11-27T01:44+0300",
    "тревога_после": "2026-11-27T02:24+0300",
@@ -141,7 +129,7 @@
   "Денежные пути: восемь дыр закрыты до старта",
   "Вид отчета платной проверки адреса",
   "Письмо клиенту, когда перевод не ушел",
-  "Зачисление пополнения за 3-6 секунд",
+  "Карантин адреса при guard_block, как при санкциях",
   "Счет комиссий гостю",
   "Шесть страниц и калькулятор"
  ]
