@@ -1,5 +1,5 @@
 {
- "t": "2026-11-26T23:31+0300",
+ "t": "2026-11-26T23:32+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -62,12 +62,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt9onHmLNFpwipmPw1Lw7dfP"
   },
   {
-   "ид": "ПС-0",
-   "последняя": "2026-11-26T23:29+0300",
-   "тревога_после": "2026-11-27T00:09+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVDLTSWJmfc1airgaEqPXYc"
-  },
-  {
    "ид": "СВ-1",
    "последняя": "2026-11-26T23:30+0300",
    "тревога_после": "2026-11-27T00:10+0300",
@@ -84,6 +78,12 @@
    "последняя": "2026-11-26T23:31+0300",
    "тревога_после": "2026-11-27T00:11+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtChompCGdAMiuRodGcv5TTk"
+  },
+  {
+   "ид": "ПС-0",
+   "последняя": "2026-11-26T23:32+0300",
+   "тревога_после": "2026-11-27T00:12+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVDLTSWJmfc1airgaEqPXYc"
   }
  ],
  "срочно": [],
@@ -109,13 +109,13 @@
   "2026-11-26": 29,
   "2026-11-25": 36
  },
- "готово_pct": 36.0,
+ "готово_pct": 36.2,
  "прогноз": "2026-12-20",
  "сегодня": [
   "Тексты доверия на трех языках",
+  "Опись готового кода продукта и перенос в ствол",
   "Запас против потолка TronGrid",
   "Сверка денежных чисел с кодом ствола",
-  "Опись готового кода продукта и перенос в ствол",
   "Подтверждение адреса без TRX",
   "Включение: канон в правилах проекта, утро и счет расхода…",
   "Потолок CatFee поднят под старт",
