@@ -60,6 +60,12 @@
    "последняя": "2026-11-26T23:22+0300",
    "тревога_после": "2026-11-27T00:02+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFCQrNqwWMEY5jJDp6mhBeg"
+  },
+  {
+   "ид": "ВЗ-1",
+   "последняя": "2026-11-26T23:22+0300",
+   "тревога_после": "2026-11-27T00:02+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt44VpWqTEnJXdhX6vEae3Rs"
   }
  ],
  "срочно": [],
@@ -93,6 +99,7 @@
   "Страж в узле",
   "Опись готового кода продукта и перенос в ствол",
   "Сверка денежных чисел с кодом ствола",
+  "Обращение на «вы» в каждой точке",
   "Потолок CatFee поднят под старт",
   "Нужен ключ Reown и 1 USDT для пробы подписи в Trust",
   "Узел: письмо, когда узел принял перевод, а сеть нет",
