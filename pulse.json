@@ -62,12 +62,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtChompCGdAMiuRodGcv5TTk"
   },
   {
-   "ид": "8.2",
-   "последняя": "2026-11-26T23:36+0300",
-   "тревога_после": "2026-11-27T00:16+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtRzfyLaRy17CMXMQtNXm4br"
-  },
-  {
    "ид": "ОТ-1",
    "последняя": "2026-11-26T23:37+0300",
    "тревога_после": "2026-11-27T00:17+0300",
@@ -84,6 +78,12 @@
    "последняя": "2026-11-26T23:39+0300",
    "тревога_после": "2026-11-27T00:19+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt5n3tFENpWGAxR7dZAFVrjy"
+  },
+  {
+   "ид": "8.2",
+   "последняя": "2026-11-26T23:40+0300",
+   "тревога_после": "2026-11-27T00:20+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtRzfyLaRy17CMXMQtNXm4br"
   },
   {
    "ид": "ИС-5.0",
@@ -121,9 +121,9 @@
   "Тексты доверия на трех языках",
   "Запас против потолка TronGrid",
   "Подтверждение адреса без TRX",
+  "Потолок CatFee поднят под старт",
   "Включение: канон в правилах проекта, утро и счет расхода…",
   "Страж в узле",
-  "Потолок CatFee поднят под старт",
   "Нужен ключ Reown и 1 USDT для пробы подписи в Trust",
   "Денежные пути: восемь дыр закрыты до старта"
  ]
