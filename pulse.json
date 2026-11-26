@@ -14,16 +14,16 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtJPHUT735f6rz7iZqECMZUL"
   },
   {
-   "ид": "ИС-6.2З",
-   "последняя": "2026-11-26T20:07+0300",
-   "тревога_после": "2026-11-26T20:47+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt1nqidCEXEPNUsYnoEfVvUT"
-  },
-  {
    "ид": "ИС-1.7",
    "последняя": "2026-11-26T20:10+0300",
    "тревога_после": "2026-11-26T22:20+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFNFgDdGUKqTzDKjvo7PD5y"
+  },
+  {
+   "ид": "ИС-6.1З",
+   "последняя": "2026-11-26T20:10+0300",
+   "тревога_после": "2026-11-26T20:50+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt16DwXUpfeWKaxMazDyrG22"
   },
   {
    "ид": "ИС-М1",
@@ -32,10 +32,10 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt8XkgYgyKC5e3YvHYaBjeF9"
   },
   {
-   "ид": "ИС-6.1З",
+   "ид": "ИС-6.2З",
    "последняя": "2026-11-26T20:14+0300",
    "тревога_после": "2026-11-26T20:54+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt16DwXUpfeWKaxMazDyrG22"
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt1nqidCEXEPNUsYnoEfVvUT"
   },
   {
    "ид": "ИС-Г1",
@@ -67,7 +67,7 @@
   "2026-11-26": 11,
   "2026-11-25": 36
  },
- "готово_pct": 66.8,
+ "готово_pct": 67.3,
  "сегодня": [
   "Обычные правки сливаются сами, денежные - одной подписью за…",
   "Песочница с нуля одной командой",
