@@ -50,12 +50,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt8XkgYgyKC5e3YvHYaBjeF9"
   },
   {
-   "ид": "ПС-0",
-   "последняя": "2026-11-26T23:20+0300",
-   "тревога_после": "2026-11-27T00:00+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVDLTSWJmfc1airgaEqPXYc"
-  },
-  {
    "ид": "СВ-1",
    "последняя": "2026-11-26T23:22+0300",
    "тревога_после": "2026-11-27T00:02+0300",
@@ -66,6 +60,12 @@
    "последняя": "2026-11-26T23:22+0300",
    "тревога_после": "2026-11-27T00:02+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt44VpWqTEnJXdhX6vEae3Rs"
+  },
+  {
+   "ид": "ПС-0",
+   "последняя": "2026-11-26T23:24+0300",
+   "тревога_после": "2026-11-27T00:04+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVDLTSWJmfc1airgaEqPXYc"
   },
   {
    "ид": "ВЗ-5",
@@ -101,9 +101,9 @@
  "прогноз": "2026-12-20",
  "сегодня": [
   "Тексты доверия на трех языках",
+  "Опись готового кода продукта и перенос в ствол",
   "Включение: канон в правилах проекта, утро и счет расхода…",
   "Страж в узле",
-  "Опись готового кода продукта и перенос в ствол",
   "Сверка денежных чисел с кодом ствола",
   "Обращение на «вы» в каждой точке",
   "Потолок CatFee поднят под старт",
