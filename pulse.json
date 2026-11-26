@@ -68,6 +68,12 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtBkQ3hH39fx7QeCv9qyQdqN"
   },
   {
+   "ид": "ИС-А1.3",
+   "последняя": "2026-11-27T01:29+0300",
+   "тревога_после": "2026-11-27T02:09+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtT64eJejsj6Jk1MqF1SFfZ4"
+  },
+  {
    "ид": "ЗК-1",
    "последняя": "2026-11-27T01:29+0300",
    "тревога_после": "2026-11-27T02:09+0300",
@@ -92,10 +98,10 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt7RNs1M5et1LTmRfmKLmo5e"
   },
   {
-   "ид": "ИС-А1.3",
+   "ид": "УЗ-Е",
    "последняя": "2026-11-27T01:37+0300",
    "тревога_после": "2026-11-27T02:17+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtT64eJejsj6Jk1MqF1SFfZ4"
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt3h1CuvNCQuT9PKybR4FY1H"
   }
  ],
  "срочно": [],
@@ -132,7 +138,6 @@
   "Зачисление пополнения за 3-6 секунд",
   "Адрес одним жестом, имя от нас, одна модель полей «Откуда»…",
   "Счет комиссий гостю",
-  "Шесть страниц и калькулятор",
-  "Узел: журнал принятых переводов на диске"
+  "Шесть страниц и калькулятор"
  ]
 }
