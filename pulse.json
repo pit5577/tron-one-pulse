@@ -56,12 +56,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVdkA7AJ13svsZq8B2W7Mrj"
   },
   {
-   "ид": "ВЗ-5",
-   "последняя": "2026-11-26T23:44+0300",
-   "тревога_после": "2026-11-27T00:24+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt9onHmLNFpwipmPw1Lw7dfP"
-  },
-  {
    "ид": "СБ-3",
    "последняя": "2026-11-26T23:48+0300",
    "тревога_после": "2026-11-27T00:28+0300",
@@ -95,7 +89,6 @@
  "прогноз": "2026-12-20",
  "сегодня": [
   "Тексты доверия на трех языках",
-  "Письмо клиенту, когда перевод не ушел",
   "Подтверждение адреса без TRX",
   "Обращение на «вы» в каждой точке",
   "Включение: канон в правилах проекта, утро и счет расхода…",
