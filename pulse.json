@@ -50,12 +50,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtBkQ3hH39fx7QeCv9qyQdqN"
   },
   {
-   "ид": "ВЗ-14",
-   "последняя": "2026-11-27T00:10+0300",
-   "тревога_после": "2026-11-27T00:50+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVdkA7AJ13svsZq8B2W7Mrj"
-  },
-  {
    "ид": "ИС-5.0",
    "последняя": "2026-11-27T00:11+0300",
    "тревога_после": "2026-11-27T00:51+0300",
@@ -66,6 +60,12 @@
    "последняя": "2026-11-27T00:13+0300",
    "тревога_после": "2026-11-27T02:23+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFfiqihDZeTrPKtsz5s3Qon"
+  },
+  {
+   "ид": "ВЗ-14",
+   "последняя": "2026-11-27T00:13+0300",
+   "тревога_после": "2026-11-27T02:23+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVdkA7AJ13svsZq8B2W7Mrj"
   }
  ],
  "срочно": [],
