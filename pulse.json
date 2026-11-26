@@ -14,9 +14,15 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtJPHUT735f6rz7iZqECMZUL"
   },
   {
+   "ид": "ИС-1.8",
+   "последняя": "2026-11-26T14:01+0300",
+   "тревога_после": "2026-11-26T14:41+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt4U4XUQaCJKUKxvhg3EQxtT"
+  },
+  {
    "ид": "ИС-1.7",
-   "последняя": "2026-11-26T13:57+0300",
-   "тревога_после": "2026-11-26T14:37+0300",
+   "последняя": "2026-11-26T14:03+0300",
+   "тревога_после": "2026-11-26T14:43+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFNFgDdGUKqTzDKjvo7PD5y"
   }
  ],
@@ -46,6 +52,7 @@
  "готово_pct": 61.8,
  "сегодня": [
   "Обычные правки сливаются сами, денежные - одной подписью за…",
+  "Claude берет задачу-карточку сам в GitHub",
   "Песочница с нуля одной командой",
   "Выпускной экзамен среды: ворота «среда готова»",
   "Уборка: старый конвейер, леса стройки, один источник задач",
