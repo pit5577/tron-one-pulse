@@ -1,5 +1,5 @@
 {
- "t": "2026-11-26T23:54+0300",
+ "t": "2026-11-26T23:57+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -50,16 +50,16 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVdkA7AJ13svsZq8B2W7Mrj"
   },
   {
-   "ид": "СБ-3",
-   "последняя": "2026-11-26T23:48+0300",
-   "тревога_после": "2026-11-27T00:28+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtBkQ3hH39fx7QeCv9qyQdqN"
-  },
-  {
    "ид": "5.1",
    "последняя": "2026-11-26T23:54+0300",
    "тревога_после": "2026-11-27T00:34+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt5n3tFENpWGAxR7dZAFVrjy"
+  },
+  {
+   "ид": "СБ-3",
+   "последняя": "2026-11-26T23:57+0300",
+   "тревога_после": "2026-11-27T00:37+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtBkQ3hH39fx7QeCv9qyQdqN"
   }
  ],
  "срочно": [],
@@ -85,14 +85,14 @@
   "2026-11-26": 33,
   "2026-11-25": 36
  },
- "готово_pct": 38.5,
+ "готово_pct": 38.6,
  "прогноз": "2026-12-20",
  "сегодня": [
   "Тексты доверия на трех языках",
   "Подтверждение адреса без TRX",
   "Обращение на «вы» в каждой точке",
-  "Включение: канон в правилах проекта, утро и счет расхода…",
   "Денежные пути: восемь дыр закрыты до старта",
+  "Включение: канон в правилах проекта, утро и счет расхода…",
   "Нужен ключ Reown и 1 USDT для пробы подписи в Trust"
  ]
 }
