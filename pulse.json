@@ -80,16 +80,16 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVm4vC7115AzsJ6QQccGcJE"
   },
   {
-   "ид": "ЗК-1",
-   "последняя": "2026-11-27T00:55+0300",
-   "тревога_после": "2026-11-27T01:35+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt438cSPnFA7rdBgvLtWaWPC"
+   "ид": "УЗ-А",
+   "последняя": "2026-11-27T00:57+0300",
+   "тревога_после": "2026-11-27T01:37+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt7RNs1M5et1LTmRfmKLmo5e"
   },
   {
-   "ид": "УЗ-А",
+   "ид": "ЗК-1",
    "последняя": "2026-11-27T00:58+0300",
    "тревога_после": "2026-11-27T01:38+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt7RNs1M5et1LTmRfmKLmo5e"
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt438cSPnFA7rdBgvLtWaWPC"
   }
  ],
  "срочно": [],
@@ -111,14 +111,14 @@
   "2026-11-27": 1,
   "2026-11-26": 33
  },
- "готово_pct": 38.8,
+ "готово_pct": 39.2,
  "прогноз": "2026-12-21",
  "сегодня": [
   "Тексты доверия на трех языках",
   "Вид отчета платной проверки адреса",
+  "Замок кассы: покупка энергии без оплаты клиента невозможна",
   "Письмо клиенту, когда перевод не ушел",
   "Денежные пути: восемь дыр закрыты до старта",
-  "Замок кассы: покупка энергии без оплаты клиента невозможна",
   "Подтверждение адреса без TRX: что значит отметка владельца",
   "Служебные адреса принимает агент: журнал, «получили»…",
   "Одно число цены и чистый экран цены",
