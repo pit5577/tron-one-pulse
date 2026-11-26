@@ -36,6 +36,12 @@
    "последняя": "2026-11-26T22:51+0300",
    "тревога_после": "2026-11-27T01:01+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtJPHUT735f6rz7iZqECMZUL"
+  },
+  {
+   "ид": "4.4",
+   "последняя": "2026-11-26T23:12+0300",
+   "тревога_после": "2026-11-26T23:52+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtBa21JpY7eeEip442ENFPJL"
   }
  ],
  "срочно": [],
@@ -65,6 +71,7 @@
  "прогноз": "2026-12-20",
  "сегодня": [
   "Включение: канон в правилах проекта, утро и счет расхода…",
+  "Страж в узле",
   "Опись готового кода продукта и перенос в ствол",
   "Сверка денежных чисел с кодом ствола",
   "Потолок CatFee поднят под старт",
