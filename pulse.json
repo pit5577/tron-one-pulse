@@ -1,5 +1,5 @@
 {
- "t": "2026-11-26T23:27+0300",
+ "t": "2026-11-26T23:28+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -72,6 +72,12 @@
    "последняя": "2026-11-26T23:24+0300",
    "тревога_после": "2026-11-27T00:04+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt9onHmLNFpwipmPw1Lw7dfP"
+  },
+  {
+   "ид": "ВЗ-14",
+   "последняя": "2026-11-26T23:28+0300",
+   "тревога_после": "2026-11-27T00:08+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVdkA7AJ13svsZq8B2W7Mrj"
   }
  ],
  "срочно": [],
@@ -107,7 +113,6 @@
   "Сверка денежных чисел с кодом ствола",
   "Обращение на «вы» в каждой точке",
   "Потолок CatFee поднят под старт",
-  "Нужен ключ Reown и 1 USDT для пробы подписи в Trust",
-  "Подтверждение адреса без TRX"
+  "Нужен ключ Reown и 1 USDT для пробы подписи в Trust"
  ]
 }
