@@ -20,10 +20,22 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt8XkgYgyKC5e3YvHYaBjeF9"
   },
   {
+   "ид": "ИС-Г1",
+   "последняя": "2026-11-26T20:14+0300",
+   "тревога_после": "2026-11-26T20:54+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt1nDWPE6dBGYGrDoL4uGXCy"
+  },
+  {
    "ид": "ИС-1.7",
    "последняя": "2026-11-26T20:20+0300",
    "тревога_после": "2026-11-26T22:30+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFNFgDdGUKqTzDKjvo7PD5y"
+  },
+  {
+   "ид": "ИС-А1.2",
+   "последняя": "2026-11-26T20:23+0300",
+   "тревога_после": "2026-11-26T21:03+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtR2r7JSC2u6uMYsJ97zdgAk"
   }
  ],
  "срочно": [],
@@ -46,14 +58,16 @@
   ]
  },
  "сделано_всего": {
-  "2026-11-26": 12,
+  "2026-11-26": 11,
   "2026-11-25": 36
  },
- "готово_pct": 64.3,
+ "готово_pct": 63.4,
  "сегодня": [
   "Обычные правки сливаются сами, денежные - одной подписью за…",
   "Песочница с нуля одной командой",
+  "Красные ворота на Маке: gate-samples и gate-watch",
   "Мост ops-a1 не теряет вход Claude",
+  "Рецензент: повтор после молчания, класс не ниже путей…",
   "Выпускной экзамен среды: ворота «среда готова»",
   "Уборка: старый конвейер, леса стройки, один источник задач",
   "Скрипты стройки: выключить после экзамена, удалить после 7…",
