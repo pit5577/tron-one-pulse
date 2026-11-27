@@ -80,12 +80,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtTHufu4rf4ZMeSE8jqzrcGg"
   },
   {
-   "ид": "ПЭ-6",
-   "последняя": "2026-11-27T03:44+0300",
-   "тревога_после": "2026-11-27T04:24+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt1dT5au5zDB6t2qhGEYCTDJ"
-  },
-  {
    "ид": "ИС-4.1",
    "последняя": "2026-11-27T03:49+0300",
    "тревога_после": "2026-11-27T04:29+0300",
@@ -118,10 +112,10 @@
   ]
  },
  "сделано_всего": {
-  "2026-11-27": 12,
+  "2026-11-27": 13,
   "2026-11-26": 33
  },
- "готово_pct": 45.1,
+ "готово_pct": 45.4,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Тексты доверия на трех языках",
