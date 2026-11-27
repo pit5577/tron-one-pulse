@@ -62,12 +62,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtUAkk9DmcJKNDSSemxjVAPb"
   },
   {
-   "ид": "ДЭ-5",
-   "последняя": "2026-11-27T08:22+0300",
-   "тревога_после": "2026-11-27T09:02+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtSCdjBQcoiWWPHrzok9rDPq"
-  },
-  {
    "ид": "УЗ-В2",
    "последняя": "2026-11-27T08:22+0300",
    "тревога_после": "2026-11-27T10:32+0300",
@@ -96,6 +90,12 @@
    "последняя": "2026-11-27T08:40+0300",
    "тревога_после": "2026-11-27T09:20+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt9jgkWeXoYbEsBKqDckjmXU"
+  },
+  {
+   "ид": "ДЭ-5",
+   "последняя": "2026-11-27T08:40+0300",
+   "тревога_после": "2026-11-27T09:20+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtSCdjBQcoiWWPHrzok9rDPq"
   }
  ],
  "срочно": [],
@@ -121,7 +121,7 @@
   "2026-11-27": 23,
   "2026-11-26": 33
  },
- "готово_pct": 53.8,
+ "готово_pct": 53.9,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Замок кассы: покупка энергии без оплаты клиента невозможна",
@@ -129,6 +129,6 @@
   "Аллокатор и казначейство: живая картина рынка в админке",
   "Зачисление пополнения за 3-6 секунд",
   "Напряженные строки и письма по камертону",
-  "Обещания страницы: тест или текст убран"
+  "Долг через подпись заранее, залпом, на странице"
  ]
 }
