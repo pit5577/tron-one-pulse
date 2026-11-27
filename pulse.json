@@ -1,5 +1,5 @@
 {
- "t": "2026-11-27T08:13+0300",
+ "t": "2026-11-27T08:14+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -62,12 +62,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtP1nEkPF9E9cQvpgXb7fTcW"
   },
   {
-   "ид": "АЛ-1",
-   "последняя": "2026-11-27T08:07+0300",
-   "тревога_после": "2026-11-27T08:47+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt9jgkWeXoYbEsBKqDckjmXU"
-  },
-  {
    "ид": "ВЗ-2",
    "последняя": "2026-11-27T08:07+0300",
    "тревога_после": "2026-11-27T08:47+0300",
@@ -78,12 +72,6 @@
    "последняя": "2026-11-27T08:08+0300",
    "тревога_после": "2026-11-27T08:48+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtNkoinMawQbEkgiT55w98Ry"
-  },
-  {
-   "ид": "ДЭ-5",
-   "последняя": "2026-11-27T08:11+0300",
-   "тревога_после": "2026-11-27T08:51+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtSCdjBQcoiWWPHrzok9rDPq"
   },
   {
    "ид": "Ч-1",
@@ -98,10 +86,22 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtXZnvFJoSLudPEXVVrPn7AK"
   },
   {
+   "ид": "АЛ-1",
+   "последняя": "2026-11-27T08:13+0300",
+   "тревога_после": "2026-11-27T08:53+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt9jgkWeXoYbEsBKqDckjmXU"
+  },
+  {
    "ид": "ОБ-К",
    "последняя": "2026-11-27T08:13+0300",
    "тревога_после": "2026-11-27T08:53+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtUAkk9DmcJKNDSSemxjVAPb"
+  },
+  {
+   "ид": "ДЭ-5",
+   "последняя": "2026-11-27T08:14+0300",
+   "тревога_после": "2026-11-27T08:54+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtSCdjBQcoiWWPHrzok9rDPq"
   }
  ],
  "срочно": [],
@@ -127,7 +127,7 @@
   "2026-11-27": 19,
   "2026-11-26": 33
  },
- "готово_pct": 52.3,
+ "готово_pct": 52.6,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Сколько хранить сводку истории адреса клиента",
@@ -135,6 +135,6 @@
   "Узел и сервер: следующий поставщик энергии в срок кошелька",
   "Зачисление пополнения за 3-6 секунд",
   "Обещания страницы: тест или текст убран",
-  "Карантин адреса при guard_block, как при санкциях"
+  "Аллокатор и казначейство: живая картина рынка в админке"
  ]
 }
