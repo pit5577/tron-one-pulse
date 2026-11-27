@@ -74,12 +74,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtHqm2jd4vcuoyKGz4qWwh43"
   },
   {
-   "ид": "ЗЧ-1",
-   "последняя": "2026-11-27T07:59+0300",
-   "тревога_после": "2026-11-27T08:39+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVm4vC7115AzsJ6QQccGcJE"
-  },
-  {
    "ид": "ОБ-К",
    "последняя": "2026-11-27T07:59+0300",
    "тревога_после": "2026-11-27T08:39+0300",
@@ -96,6 +90,12 @@
    "последняя": "2026-11-27T08:00+0300",
    "тревога_после": "2026-11-27T08:40+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtP1nEkPF9E9cQvpgXb7fTcW"
+  },
+  {
+   "ид": "ЗЧ-1",
+   "последняя": "2026-11-27T08:01+0300",
+   "тревога_после": "2026-11-27T08:41+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtVm4vC7115AzsJ6QQccGcJE"
   }
  ],
  "срочно": [],
@@ -126,7 +126,7 @@
  "сегодня": [
   "Замок кассы: покупка энергии без оплаты клиента невозможна",
   "Узел и сервер: следующий поставщик энергии в срок кошелька",
-  "Сколько хранить сводку истории адреса клиента",
+  "Обещания движка получили тесты поведения",
   "Зачисление пополнения за 3-6 секунд",
   "Карантин адреса при guard_block, как при санкциях",
   "Напряженные строки и письма по камертону",
