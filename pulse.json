@@ -1,5 +1,5 @@
 {
- "t": "2026-11-27T07:52+0300",
+ "t": "2026-11-27T07:53+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -50,12 +50,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtEKFs4qS7HHciFwmfKuwuan"
   },
   {
-   "ид": "СБ-10",
-   "последняя": "2026-11-27T07:48+0300",
-   "тревога_после": "2026-11-27T08:28+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtNkoinMawQbEkgiT55w98Ry"
-  },
-  {
    "ид": "ВЗ-2",
    "последняя": "2026-11-27T07:48+0300",
    "тревога_после": "2026-11-27T08:28+0300",
@@ -102,6 +96,18 @@
    "последняя": "2026-11-27T07:52+0300",
    "тревога_после": "2026-11-27T08:32+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt2dV6RRvwQLcZFK5VCAdpXj"
+  },
+  {
+   "ид": "СБ-10",
+   "последняя": "2026-11-27T07:53+0300",
+   "тревога_после": "2026-11-27T08:33+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtNkoinMawQbEkgiT55w98Ry"
+  },
+  {
+   "ид": "ОБ-Д",
+   "последняя": "2026-11-27T07:53+0300",
+   "тревога_после": "2026-11-27T08:33+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtP1nEkPF9E9cQvpgXb7fTcW"
   }
  ],
  "срочно": [],
@@ -127,7 +133,7 @@
   "2026-11-27": 17,
   "2026-11-26": 33
  },
- "готово_pct": 48.8,
+ "готово_pct": 49.0,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Замок кассы: покупка энергии без оплаты клиента невозможна",
@@ -137,8 +143,8 @@
   "Проверка денег для спора адреса подписью",
   "Письма на support@ и security@ принимает наш агент",
   "Долг через подпись заранее, залпом, на странице",
-  "Обещания движка получили тесты поведения",
   "Аллокатор и казначейство: живая картина рынка в админке",
-  "Тексты вагона 1: хвост разборов"
+  "Тексты вагона 1: хвост разборов",
+  "Полосы заботы: одна за раз и только о деньгах"
  ]
 }
