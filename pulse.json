@@ -1,5 +1,5 @@
 {
- "t": "2026-11-27T03:20+0300",
+ "t": "2026-11-27T03:21+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -96,6 +96,18 @@
    "последняя": "2026-11-27T03:20+0300",
    "тревога_после": "2026-11-27T04:00+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt1dT5au5zDB6t2qhGEYCTDJ"
+  },
+  {
+   "ид": "ПЭ-7",
+   "последняя": "2026-11-27T03:20+0300",
+   "тревога_после": "2026-11-27T04:00+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtRyo6CCnXnS7W84v4BqxWyr"
+  },
+  {
+   "ид": "6.3",
+   "последняя": "2026-11-27T03:21+0300",
+   "тревога_после": "2026-11-27T04:01+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtTHufu4rf4ZMeSE8jqzrcGg"
   }
  ],
  "срочно": [],
@@ -130,9 +142,7 @@
   "Вид отчета платной проверки адреса",
   "Письмо клиенту, когда перевод не ушел",
   "Карантин адреса при guard_block, как при санкциях",
-  "Счет комиссий гостю",
   "Кран Nile вызывается с сервера ops-a1 без Мака",
-  "Список адресов: одна строка на адрес, меню «⋯», удаление с…",
   "Каркас дверей на карточке кошелька"
  ]
 }
