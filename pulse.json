@@ -92,16 +92,16 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtHqm2jd4vcuoyKGz4qWwh43"
   },
   {
-   "ид": "СБ-2",
-   "последняя": "2026-11-27T08:24+0300",
-   "тревога_после": "2026-11-27T09:04+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtKADoF79FNw5WStAFCgM2ka"
-  },
-  {
    "ид": "ИС-А1.4",
    "последняя": "2026-11-27T08:24+0300",
    "тревога_после": "2026-11-27T09:04+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtGCkauNy6osiL5m4TTGtRzZ"
+  },
+  {
+   "ид": "СБ-2",
+   "последняя": "2026-11-27T08:25+0300",
+   "тревога_после": "2026-11-27T09:05+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtKADoF79FNw5WStAFCgM2ka"
   }
  ],
  "срочно": [],
