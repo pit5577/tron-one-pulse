@@ -50,6 +50,12 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtEKFs4qS7HHciFwmfKuwuan"
   },
   {
+   "ид": "СБ-10",
+   "последняя": "2026-11-27T07:48+0300",
+   "тревога_после": "2026-11-27T08:28+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtNkoinMawQbEkgiT55w98Ry"
+  },
+  {
    "ид": "ВЗ-2",
    "последняя": "2026-11-27T07:48+0300",
    "тревога_после": "2026-11-27T08:28+0300",
@@ -98,12 +104,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt2dV6RRvwQLcZFK5VCAdpXj"
   },
   {
-   "ид": "СБ-10",
-   "последняя": "2026-11-27T07:53+0300",
-   "тревога_после": "2026-11-27T08:33+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtNkoinMawQbEkgiT55w98Ry"
-  },
-  {
    "ид": "ОБ-Д",
    "последняя": "2026-11-27T07:53+0300",
    "тревога_после": "2026-11-27T08:33+0300",
@@ -133,7 +133,7 @@
   "2026-11-27": 17,
   "2026-11-26": 33
  },
- "готово_pct": 49.0,
+ "готово_pct": 48.8,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Замок кассы: покупка энергии без оплаты клиента невозможна",
