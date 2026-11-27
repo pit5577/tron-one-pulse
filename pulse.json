@@ -38,12 +38,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtDdCy1EHFz67sjt5cc4AxtC"
   },
   {
-   "ид": "СБ-2",
-   "последняя": "2026-11-27T07:51+0300",
-   "тревога_после": "2026-11-27T08:31+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtKADoF79FNw5WStAFCgM2ka"
-  },
-  {
    "ид": "ЗЧ-1",
    "последняя": "2026-11-27T08:01+0300",
    "тревога_после": "2026-11-27T08:41+0300",
@@ -108,6 +102,12 @@
    "последняя": "2026-11-27T08:17+0300",
    "тревога_после": "2026-11-27T08:57+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt9jgkWeXoYbEsBKqDckjmXU"
+  },
+  {
+   "ид": "СБ-2",
+   "последняя": "2026-11-27T08:17+0300",
+   "тревога_после": "2026-11-27T08:57+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtKADoF79FNw5WStAFCgM2ka"
   }
  ],
  "срочно": [],
@@ -133,7 +133,7 @@
   "2026-11-27": 19,
   "2026-11-26": 33
  },
- "готово_pct": 52.6,
+ "готово_pct": 52.7,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Обещания узла получили пороги времени в тестах",
