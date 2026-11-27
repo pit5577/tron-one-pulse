@@ -90,6 +90,12 @@
    "последняя": "2026-11-27T08:11+0300",
    "тревога_после": "2026-11-27T08:51+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtSCdjBQcoiWWPHrzok9rDPq"
+  },
+  {
+   "ид": "Ч-1",
+   "последняя": "2026-11-27T08:11+0300",
+   "тревога_после": "2026-11-27T08:51+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt8u4Wf88WRPGMf9oszBPJ1s"
   }
  ],
  "срочно": [],
@@ -124,7 +130,6 @@
   "Зачисление пополнения за 3-6 секунд",
   "Карантин адреса при guard_block, как при санкциях",
   "Напряженные строки и письма по камертону",
-  "Тексты вагона 1: хвост разборов",
-  "Полосы заботы: одна за раз и только о деньгах"
+  "Тексты вагона 1: хвост разборов"
  ]
 }
