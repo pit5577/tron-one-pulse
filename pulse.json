@@ -1,5 +1,5 @@
 {
- "t": "2026-11-27T07:55+0300",
+ "t": "2026-11-27T07:54+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -74,6 +74,12 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtKADoF79FNw5WStAFCgM2ka"
   },
   {
+   "ид": "КРАН-С",
+   "последняя": "2026-11-27T07:51+0300",
+   "тревога_после": "2026-11-27T08:31+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtT3qRgc4wjH6U58dawqBRiH"
+  },
+  {
    "ид": "ОБ-У",
    "последняя": "2026-11-27T07:51+0300",
    "тревога_после": "2026-11-27T08:31+0300",
@@ -86,12 +92,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtUAkk9DmcJKNDSSemxjVAPb"
   },
   {
-   "ид": "СБ-4",
-   "последняя": "2026-11-27T07:52+0300",
-   "тревога_после": "2026-11-27T08:32+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt2dV6RRvwQLcZFK5VCAdpXj"
-  },
-  {
    "ид": "СБ-10",
    "последняя": "2026-11-27T07:53+0300",
    "тревога_после": "2026-11-27T08:33+0300",
@@ -102,12 +102,6 @@
    "последняя": "2026-11-27T07:53+0300",
    "тревога_после": "2026-11-27T08:33+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtP1nEkPF9E9cQvpgXb7fTcW"
-  },
-  {
-   "ид": "КРАН-С",
-   "последняя": "2026-11-27T07:55+0300",
-   "тревога_после": "2026-11-27T08:35+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtT3qRgc4wjH6U58dawqBRiH"
   }
  ],
  "срочно": [],
@@ -130,18 +124,18 @@
   ]
  },
  "сделано_всего": {
-  "2026-11-27": 17,
+  "2026-11-27": 18,
   "2026-11-26": 33
  },
- "готово_pct": 49.1,
+ "готово_pct": 49.8,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Замок кассы: покупка энергии без оплаты клиента невозможна",
   "Узел и сервер: следующий поставщик энергии в срок кошелька",
   "Зачисление пополнения за 3-6 секунд",
   "Карантин адреса при guard_block, как при санкциях",
-  "Кран Nile вызывается с сервера ops-a1 без Мака",
   "Проверка денег для спора адреса подписью",
+  "Письма на support@ и security@ принимает наш агент",
   "Долг через подпись заранее, залпом, на странице",
   "Аллокатор и казначейство: живая картина рынка в админке",
   "Тексты вагона 1: хвост разборов",
