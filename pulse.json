@@ -1,5 +1,5 @@
 {
- "t": "2026-11-27T07:56+0300",
+ "t": "2026-11-27T07:57+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -50,12 +50,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtEKFs4qS7HHciFwmfKuwuan"
   },
   {
-   "ид": "ВЗ-2",
-   "последняя": "2026-11-27T07:48+0300",
-   "тревога_после": "2026-11-27T08:28+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtHqm2jd4vcuoyKGz4qWwh43"
-  },
-  {
    "ид": "ПМ60-1",
    "последняя": "2026-11-27T07:49+0300",
    "тревога_после": "2026-11-27T08:29+0300",
@@ -92,16 +86,16 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtP1nEkPF9E9cQvpgXb7fTcW"
   },
   {
-   "ид": "И-7",
-   "последняя": "2026-11-27T07:55+0300",
-   "тревога_после": "2026-11-27T08:35+0300",
-   "ссылка": ""
-  },
-  {
    "ид": "АЛ-1",
    "последняя": "2026-11-27T07:56+0300",
    "тревога_после": "2026-11-27T08:36+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt9jgkWeXoYbEsBKqDckjmXU"
+  },
+  {
+   "ид": "ВЗ-2",
+   "последняя": "2026-11-27T07:57+0300",
+   "тревога_после": "2026-11-27T08:37+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtHqm2jd4vcuoyKGz4qWwh43"
   }
  ],
  "срочно": [],
@@ -127,14 +121,14 @@
   "2026-11-27": 18,
   "2026-11-26": 33
  },
- "готово_pct": 50.1,
+ "готово_pct": 50.5,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Замок кассы: покупка энергии без оплаты клиента невозможна",
-  "Не отдавать полосу даром",
   "Узел и сервер: следующий поставщик энергии в срок кошелька",
   "Зачисление пополнения за 3-6 секунд",
   "Карантин адреса при guard_block, как при санкциях",
+  "Напряженные строки и письма по камертону",
   "Проверка денег для спора адреса подписью",
   "Долг через подпись заранее, залпом, на странице",
   "Тексты вагона 1: хвост разборов",
