@@ -1,5 +1,5 @@
 {
- "t": "2026-11-27T03:32+0300",
+ "t": "2026-11-27T03:35+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -80,12 +80,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtDdCy1EHFz67sjt5cc4AxtC"
   },
   {
-   "ид": "ПЭ-7",
-   "последняя": "2026-11-27T03:23+0300",
-   "тревога_после": "2026-11-27T04:03+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtRyo6CCnXnS7W84v4BqxWyr"
-  },
-  {
    "ид": "6.4",
    "последняя": "2026-11-27T03:27+0300",
    "тревога_после": "2026-11-27T04:07+0300",
@@ -108,6 +102,12 @@
    "последняя": "2026-11-27T03:32+0300",
    "тревога_после": "2026-11-27T04:12+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt1dT5au5zDB6t2qhGEYCTDJ"
+  },
+  {
+   "ид": "ПЭ-7",
+   "последняя": "2026-11-27T03:35+0300",
+   "тревога_после": "2026-11-27T04:15+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtRyo6CCnXnS7W84v4BqxWyr"
   }
  ],
  "срочно": [],
@@ -133,7 +133,7 @@
   "2026-11-27": 9,
   "2026-11-26": 33
  },
- "готово_pct": 42.8,
+ "готово_pct": 43.0,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Тексты доверия на трех языках",
