@@ -1,5 +1,5 @@
 {
- "t": "2026-11-27T04:18+0300",
+ "t": "2026-11-27T04:24+0300",
  "версия": 1,
  "тихие_часы": [
   22,
@@ -84,6 +84,12 @@
    "последняя": "2026-11-27T04:08+0300",
    "тревога_после": "2026-11-27T04:48+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtFrVNNvgjEtDe9cATvMgf77"
+  },
+  {
+   "ид": "ИС-7.2",
+   "последняя": "2026-11-27T04:24+0300",
+   "тревога_после": "2026-11-27T05:04+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtNFtfPEPgKe7VsQbGiwJzu3"
   }
  ],
  "срочно": [],
