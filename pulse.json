@@ -38,18 +38,6 @@
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtDdCy1EHFz67sjt5cc4AxtC"
   },
   {
-   "ид": "УЗ-В2",
-   "последняя": "2026-11-27T07:37+0300",
-   "тревога_после": "2026-11-27T08:17+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtEKFs4qS7HHciFwmfKuwuan"
-  },
-  {
-   "ид": "ПМ60-1",
-   "последняя": "2026-11-27T07:49+0300",
-   "тревога_после": "2026-11-27T08:29+0300",
-   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqt4gA4nyMvknAkK2pYC3A1bG"
-  },
-  {
    "ид": "СБ-2",
    "последняя": "2026-11-27T07:51+0300",
    "тревога_после": "2026-11-27T08:31+0300",
@@ -96,6 +84,12 @@
    "последняя": "2026-11-27T08:02+0300",
    "тревога_после": "2026-11-27T08:42+0300",
    "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtP1nEkPF9E9cQvpgXb7fTcW"
+  },
+  {
+   "ид": "УЗ-В2",
+   "последняя": "2026-11-27T08:03+0300",
+   "тревога_после": "2026-11-27T08:43+0300",
+   "ссылка": "https://claude.ai/code/project/chan_01SpQdGhWkDqgheSSzwVuoqt?thread=cmsg_01SpQdGhWkDqgheSSzwVuoqtEKFs4qS7HHciFwmfKuwuan"
   }
  ],
  "срочно": [],
@@ -118,10 +112,10 @@
   ]
  },
  "сделано_всего": {
-  "2026-11-27": 18,
+  "2026-11-27": 19,
   "2026-11-26": 33
  },
- "готово_pct": 51.0,
+ "готово_pct": 51.5,
  "прогноз": "2026-12-17",
  "сегодня": [
   "Замок кассы: покупка энергии без оплаты клиента невозможна",
